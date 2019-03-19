@@ -6,15 +6,15 @@
 	"minimum-stability":"dev",
 	"prefer-stable":true,
 	"require":{
-		"davidhirtz/yii2-skeleton":"dev-master",
+		"davidhirtz/yii2-skeleton":"dev-master"
 	},
 	"extra":{
 		"bootstrap":"davidhirtz\\yii2\\anakin\\composer\\Bootstrap"
 	},
 	"repositories":[
 		{
-			"type":"composer",
-			"url":"https://asset-packagist.org"
+			"type":"git",
+			"url":"git@github.com:davidhirtz/yii2-skeleton.git"
 		}
 	]
 }
