@@ -8,7 +8,7 @@ use Yii;
 
 /**
  * Class Bootstrap
- * @package davidhirtz\yii2\skeleton\bootstrap
+ * @package davidhirtz\yii2\anakin\bootstrap
  */
 class Bootstrap implements BootstrapInterface
 {
