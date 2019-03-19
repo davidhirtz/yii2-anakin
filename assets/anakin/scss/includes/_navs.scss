@@ -1,0 +1,52 @@
+/*
+Navbar.
+ */
+.navbar-nav{
+	text-transform:uppercase;
+	@extend %bebas;
+
+	& > li{
+		position:relative;
+		border-right:1px solid $anakin-navbar-dark-border-color;
+
+		&:first-child{
+			border-left:1px solid $anakin-navbar-dark-border-color;
+		}
+
+		&.active{
+
+			&:after{
+				display:block;
+				position:absolute;
+				left:-1px;
+				bottom:-6px;
+				width:calc(100% + 2px);
+				height:6px;
+				background-color:$body-text;
+				content:"";
+			}
+		}
+	}
+}
+
+/*
+Nav.
+ */
+.submenu{
+	@extend %bebas;
+
+	//> li{
+	//	margin:0 5px 10px;
+	//
+	//	> a{
+	//		color:inherit;
+	//		background-color:$panel-default-heading-bg;
+	//	}
+	//}
+}
+//
+//.nav-pills-center{
+//	display:flex;
+//	justify-content:center;
+//	flex-wrap:wrap;
+//}

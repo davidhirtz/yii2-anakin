@@ -1,0 +1,17 @@
+/**
+ * Alerts.
+ */
+.alert{
+	border:0;
+	@extend %bebas;
+	color:$body-text!important;
+}
+
+.alert-danger, .alert-success{
+	font-weight:bold;
+
+}
+
+.alert-error{
+	@extend .alert-danger;
+}

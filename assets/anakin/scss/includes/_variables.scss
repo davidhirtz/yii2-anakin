@@ -1,0 +1,203 @@
+/*
+Config.
+ */
+$enable-shadows:true;
+
+/*
+Colors.
+ */
+$primary:#000;
+$success:#74bcd1;
+$danger:#ffb7bb;
+$info:#ede26b;
+
+$body-text:#000;
+$body-bg:#fff;
+
+$link-hover-color:#74bcd1;
+$anakin-success-bg:#d1e8ef;
+$app-info-text:$body-text;
+
+$btn-primary-bg:#000;
+
+/*
+Grid.
+ */
+$container-max-widths:(
+		lg: 1200px,
+		xl: 1400px
+);
+
+/*
+Spacers.
+ */
+$app-margin-bottom:40px;
+$app-padding-y:15px;
+$app-padding-x:0;
+$app-body-padding:110px 0 50px;
+$app-header-margin:40px 0 20px;
+
+/*
+Border.
+ */
+$border-radius:0;
+$border-size:0;
+$border-color:#ebebeb;
+
+/*
+Text.
+ */
+$font-family-base:'ATC Overlook', sans-serif;
+$headings-font-weight:700;
+$link-hover-decoration:none;
+
+/*
+Navs.
+ */
+$nav-link-padding-y:10px;
+$nav-link-padding-x:15px;
+$app-submenu-link-margin:0 5px 10px;
+
+/*
+Navbar.
+ */
+$app-navbar-nav-link-padding-y:20px;
+$navbar-nav-link-padding-x:20px;
+$app-navbar-background:#fff;
+$app-navbar-dark-hover-bg:$border-color;
+$navbar-dark-active-bg:#fff;
+$navbar-dark-color:$body-text;
+$navbar-dark-hover-color:$body-text;
+$navbar-dark-active-color:$body-text;
+$anakin-navbar-dark-border-color:$border-color;
+$navbar-border:1px solid $anakin-navbar-dark-border-color;
+
+
+/*
+Breadcrumbs.
+ */
+$breadcrumb-bg:transparent;
+$breadcrumb-color:$body-text;
+$breadcrumb-padding-y:0;
+$breadcrumb-divider-color:$body-text;
+
+/*
+Alert.
+ */
+$alert-padding-x:15px;
+
+/*
+Card.
+ */
+$card-spacer-y:15px;
+$card-cap-bg:transparent;
+$card-border-width:0;
+$card-border-color:#000;
+$card-danger-bg:$card-cap-bg;
+$card-danger-border:$danger;
+
+
+/*
+Buttons.
+ */
+//$btn-primary-bg:$primary!default;
+//$btn-primary-hover-bg:darken($btn-primary-bg, 7.5%)!default;
+//$btn-primary-active-bg: darken($btn-primary-bg, 10%)!default;
+//$btn-primary-border-color:$primary!default;
+//$btn-primary-hover-border-color:$btn-primary-border-color!default;
+//$btn-primary-active-border-color:$btn-primary-border-color!default;
+//
+//$btn-secondary-bg:$white!default;
+//$btn-secondary-hover-bg:$gray-200!default;
+//$btn-secondary-active-bg:$gray-300!default;
+//$btn-secondary-border-color:$border-color!default;
+//$btn-secondary-hover-border-color:$btn-secondary-border-color!default;
+//$btn-secondary-active-border-color:$btn-secondary-border-color!default;
+
+/*
+Input.
+ */
+$input-btn-padding-y:12px;
+$input-btn-padding-x:20px;
+$app-form-label-font-weight:normal;
+
+$input-padding-y:$input-btn-padding-y;
+$input-padding-x:$input-btn-padding-y;
+$input-height:45px;
+
+
+/*
+List group.
+ */
+$list-group-item-padding-x:15px;
+$list-group-action-color:$body-text;
+
+/*
+Title.
+ */
+$app-header-border-bottom:transparent;
+
+/*
+Panel.
+ */
+$panel-body-padding:15px 0;
+$panel-heading-padding:15px 0;
+
+$panel-default-text:$body-text;
+$panel-default-border:$body-text;
+$panel-default-heading-bg:transparent;
+$panel-danger-heading-bg:transparent;
+
+/*
+Lists.
+ */
+$list-group-border:#ebebeb;
+$list-group-link-color:$body-text;
+
+/*
+Buttons.
+ */
+$btn-box-shadow:none;
+
+/*
+Forms.
+ */
+$input-color:$body-text;
+$input-border-color:transparent;
+$input-group-addon-bg:#fff;
+$input-color-placeholder:#9f9f9f;
+$input-box-shadow:inset 2px 2px 6px 0 rgba(0, 0, 0, 0.13) !important;
+
+$hr-border:#ebebeb;
+
+/*
+Tables.
+ */
+$table-cell-padding:15px;
+$app-table-th-active-font-style:normal;
+
+//
+///**
+//Pagination.
+// */
+$pagination-hover-color:$body-text;
+$dropdown-spacer:0;
+
+
+/*
+Badge.
+ */
+$app-badge-bg:transparent;
+$app-badge-color:#000 !important;
+$badge-font-weight:700;
+$badge-padding-y:3px;
+$badge-padding-x:5px;
+$badge-border-radius:0;
+
+
+//
+///*
+//Dropdown.
+// */
+//$dropdown-link-hover-color:#fff;
+//$dropdown-link-hover-bg:$link-hover-color;

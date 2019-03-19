@@ -1,0 +1,42 @@
+.input-group-prepend, .input-group-append{
+	color:$text-muted !important;
+	background-color:transparent !important;
+}
+
+.input-group-text{
+	border:0;
+	background-color:transparent !important;
+
+	.input-group-prepend &{
+		padding-right:0
+	}
+
+	.input-group-append &{
+		padding-left:0
+	}
+}
+
+.col-form-label{
+	@extend %bebas;
+}
+
+.input-group{
+	box-shadow:$input-box-shadow;
+}
+
+.is-invalid .form-control, .is-invalid .input-group{
+	background:$danger !important;
+}
+
+.input-group{
+	.form-control{
+		border:0 !important;
+		background:transparent;
+		box-shadow:none !important;
+	}
+}
+
+input:-webkit-autofill{
+	transition:background-color 5000s ease-in-out 0s!important;
+	-webkit-box-shadow:0 0 0 1000px #fff inset!important;
+}

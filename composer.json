@@ -1,0 +1,20 @@
+{
+	"name":"davidhirtz/yii2-anakin",
+	"type":"yii2-extension",
+	"description":"Yii2 Anakin Admin Skin",
+	"homepage":"http://www.davidhirtz.com/",
+	"minimum-stability":"dev",
+	"prefer-stable":true,
+	"require":{
+		"davidhirtz/yii2-skeleton":"dev-master",
+	},
+	"extra":{
+		"bootstrap":"davidhirtz\\yii2\\anakin\\composer\\Bootstrap"
+	},
+	"repositories":[
+		{
+			"type":"composer",
+			"url":"https://asset-packagist.org"
+		}
+	]
+}

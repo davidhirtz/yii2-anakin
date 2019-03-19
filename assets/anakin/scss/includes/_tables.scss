@@ -1,0 +1,7 @@
+.table th{
+	@extend %bebas;
+}
+
+tr.success > td, .bg-success{
+	background-color:$anakin-success-bg!important;
+}
