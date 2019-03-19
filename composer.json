@@ -8,6 +8,11 @@
 	"require":{
 		"davidhirtz/yii2-skeleton":"dev-master"
 	},
+	"autoload":{
+		"psr-4":{
+			"davidhirtz\\yii2\\anakin\\":""
+		}
+	},
 	"extra":{
 		"bootstrap":"davidhirtz\\yii2\\anakin\\composer\\Bootstrap"
 	},
