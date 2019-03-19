@@ -5,7 +5,6 @@ namespace davidhirtz\yii2\anakin\composer;
 use davidhirtz\yii2\skeleton\web\Application;
 use yii\base\BootstrapInterface;
 use Yii;
-use yii\helpers\ArrayHelper;
 
 /**
  * Class Bootstrap
@@ -14,51 +13,41 @@ use yii\helpers\ArrayHelper;
 class Bootstrap implements BootstrapInterface
 {
     /**
-     * @param array $config
-     * @return array
+     * @param Application $app
      */
-    public static function preInit($config)
+    public function bootstrap($app)
     {
-        $anakin = [
-            'components'=>[
-                'assetManager'=>[
-                    'bundles'=>[
-                        'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset'=>[
-                            'editorAssetBundle'=>'davidhirtz\yii2\anakin\assets\AnakinAsset',
-                        ],
-                        'davidhirtz\yii2\skeleton\assets\AdminAsset'=>[
-                            'css'=>[],
-                        ],
-                    ],
-                ],
-                'mailer'=>[
-                    'htmlLayout'=>'layouts/anakin',
-                ],
-            ],
-            'on beforeAction'=>function(yii\base\ActionEvent $event)
-            {
-                if($event->action->controller->module instanceof \app\modules\admin\Module)
-                {
-                    $view=Yii::$app->getView();
-                    $alias='@skeleton/modules/admin/views/site';
+        Yii::setAlias('@anakin', dirname(__DIR__));
 
-                    if($view->theme===null)
-                    {
-                        $view->theme=Yii::createObject([
-                            'class'=>'\yii\base\Theme',
-                        ]);
-                    }
+        $assetManager = $app->getAssetManager();
+        $assetManager->bundles['davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset']['editorAssetBundle'] = 'davidhirtz\yii2\anakin\assets\AnakinAsset';
+        $assetManager->bundles['davidhirtz\yii2\skeleton\assets\AdminAsset']['css'] = [];
 
-                    if(!isset($view->theme->pathMap[$alias]))
-                    {
-                        $view->theme->pathMap[$alias]='@app/modules/admin/views/anakin';
-                    }
+        $app->getMailer()->htmlLayout = '@anakin/views/layouts/mail';
 
-                    \davidhirtz\yii2\anakin\assets\AnakinAsset::register($view);
-                }
-            }
+        $app->getI18n()->translations['anakin'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => Yii::$app->sourceLanguage,
+            'basePath' => '@anakin/messages',
         ];
 
-        return ArrayHelper::merge($anakin, $config);
+        $app->on(Application::EVENT_BEFORE_ACTION, function (yii\base\ActionEvent $event) {
+            if ($event->action->controller->module instanceof \davidhirtz\yii2\skeleton\modules\admin\Module) {
+                $view = Yii::$app->getView();
+                $alias = '@skeleton/modules/admin/views/dashboard';
+
+                if ($view->theme === null) {
+                    $view->theme = Yii::createObject([
+                        'class' => '\yii\base\Theme',
+                    ]);
+                }
+
+                if (!isset($view->theme->pathMap[$alias])) {
+                    $view->theme->pathMap[$alias] = '@anakin/views/dashboard';
+                }
+
+                \davidhirtz\yii2\anakin\assets\AnakinAsset::register($view);
+            }
+        });
     }
 }

@@ -9,21 +9,17 @@ var cssnano=require('gulp-cssnano');
 var rename=require('gulp-rename');
 var sass=require('gulp-sass');
 var sourcemaps=require('gulp-sourcemaps');
-var uglify=require('gulp-uglify');
 
 
 // Options.
 var options={
 	autoprefixer:[
 		'last 2 versions',
-		'ie >= 9'
+		'ie >= 11'
 	],
 	sass:{
 		errLogToConsole:true,
-		outputStyle:'expanded',
-		// includePaths:[
-		// 	'vendor/davidhirtz/assets/site/scss/'
-		// ]
+		outputStyle:'expanded'
 	}
 };
 
@@ -48,16 +44,6 @@ function scss()
 		.pipe(gulp.dest('.'));
 }
 
-// JS.
-function scripts()
-{
-	// noinspection JSUnresolvedFunction
-	return gulp.src(['assets/*/js/*.js', '!assets/*/js/*.min.js'], {base:'./'})
-		.pipe(uglify())
-		.pipe(rename({suffix:'.min'}))
-		.pipe(gulp.dest('.'));
-}
-
 // Images.
 function images()
 {
@@ -77,13 +63,11 @@ function watch()
 {
 	gulp.watch('assets/*/scss/**/_*.scss', scss);
 	gulp.watch('assets/*/scss/*.scss', scss);
-	gulp.watch('assets/*/js/*.js', scripts);
 }
 
 // Tasks.
 gulp.task('scss', scss);
 gulp.task('images', images);
-gulp.task('scripts', scripts);
 
-gulp.task('build', gulp.parallel(scss, images, scripts));
+gulp.task('build', gulp.parallel(scss, images));
 gulp.task('default', gulp.series('build', watch));

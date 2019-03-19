@@ -1,16 +1,17 @@
 <?php
-namespace davidhirtz\yii2\anakin;
+
+namespace davidhirtz\yii2\anakin\assets;
 
 /**
  * Class AnakinMailAsset
- * @package davidhirtz\yii2\anakin
+ * @package davidhirtz\yii2\anakin\assets
  */
 class AnakinMailAsset extends AnakinAsset
 {
     /**
      * The default logo url.
      */
-    const DEFAULT_LOGO_URL='/images/mail/logo.svg';
+    const DEFAULT_LOGO_URL = '/images/mail/logo.svg';
 
     /**
      * Removes all Javascript or CSS files, we only need the asset path for
@@ -18,7 +19,7 @@ class AnakinMailAsset extends AnakinAsset
      */
     public function init()
     {
-        $this->css=$this->depends=$this->js=[];
+        $this->css = $this->depends = $this->js = [];
         parent::init();
     }
 }
