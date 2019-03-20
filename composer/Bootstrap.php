@@ -2,6 +2,7 @@
 
 namespace davidhirtz\yii2\anakin\composer;
 
+use davidhirtz\yii2\skeleton\composer\BootstrapTrait;
 use davidhirtz\yii2\skeleton\web\Application;
 use yii\base\BootstrapInterface;
 use Yii;
@@ -12,6 +13,8 @@ use Yii;
  */
 class Bootstrap implements BootstrapInterface
 {
+    use BootstrapTrait;
+
     /**
      * @param Application $app
      */
@@ -19,17 +22,31 @@ class Bootstrap implements BootstrapInterface
     {
         Yii::setAlias('@anakin', dirname(__DIR__));
 
-        $assetManager = $app->getAssetManager();
-        $assetManager->bundles['davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset']['editorAssetBundle'] = 'davidhirtz\yii2\anakin\assets\AnakinAsset';
-        $assetManager->bundles['davidhirtz\yii2\skeleton\assets\AdminAsset']['css'] = [];
-
-        $app->getMailer()->htmlLayout = '@anakin/views/layouts/mail';
-
-        $app->getI18n()->translations['anakin'] = [
-            'class' => 'yii\i18n\PhpMessageSource',
-            'sourceLanguage' => Yii::$app->sourceLanguage,
-            'basePath' => '@anakin/messages',
-        ];
+        $this->extendComponents($app, [
+            'assetManager' => [
+                [
+                    'bundles' => [
+                        'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset' => [
+                            'editorAssetBundle' => 'davidhirtz\yii2\anakin\assets\AnakinAsset',
+                        ],
+                        'davidhirtz\yii2\skeleton\assets\AdminAsset' => [
+                            'css' => [],
+                        ],
+                    ]
+                ],
+            ],
+            'i18n' => [
+                'translations' => [
+                    'anakin' => [
+                        'class' => 'yii\i18n\PhpMessageSource',
+                        'basePath' => '@anakin/messages',
+                    ],
+                ],
+            ],
+            'mailer' => [
+                'htmlLayout' => '@anakin/views/layouts/mail',
+            ]
+        ]);
 
         $app->on(Application::EVENT_BEFORE_ACTION, function (yii\base\ActionEvent $event) {
             if ($event->action->controller->module instanceof \davidhirtz\yii2\skeleton\modules\admin\Module) {
