@@ -24,15 +24,13 @@ class Bootstrap implements BootstrapInterface
 
         $this->extendComponents($app, [
             'assetManager' => [
-                [
-                    'bundles' => [
-                        'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset' => [
-                            'editorAssetBundle' => 'davidhirtz\yii2\anakin\assets\AnakinAsset',
-                        ],
-                        'davidhirtz\yii2\skeleton\assets\AdminAsset' => [
-                            'css' => [],
-                        ],
-                    ]
+                'bundles' => [
+                    'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset' => [
+                        'editorAssetBundle' => 'davidhirtz\yii2\anakin\assets\AnakinAsset',
+                    ],
+                    'davidhirtz\yii2\skeleton\assets\AdminAsset' => [
+                        'css' => [],
+                    ],
                 ],
             ],
             'i18n' => [
