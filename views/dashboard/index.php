@@ -3,12 +3,10 @@
  * Admin index.
  * @see \davidhirtz\yii2\skeleton\modules\admin\controllers\DashboardController::actionIndex()
  * @var \davidhirtz\yii2\skeleton\web\View $this
- * @var HomePanelInterface[] $panels
+ * @var array $panels
  * @var \davidhirtz\yii2\anakin\assets\AnakinAsset $bundle
  */
 
-use davidhirtz\yii2\skeleton\modules\admin\widgets\panels\HomePanel;
-use davidhirtz\yii2\skeleton\modules\admin\widgets\panels\HomePanelInterface;
 use davidhirtz\yii2\skeleton\widgets\fontawesome\Nav;
 
 $bundle = $this->getAssetManager()->getBundle('\davidhirtz\yii2\anakin\assets\AnakinAsset');
@@ -17,7 +15,7 @@ $logoUrl = $bundle->getLogoUrl();
 $this->registerJs('$("body").addClass("home");');
 $this->registerCSS('.breadcrumb{visibility:hidden;}');
 
-$this->setPageTitle(Yii::t('app', 'Admin'));
+$this->setTitle(Yii::t('app', 'Admin'));
 ?>
 <div class="text-center">
     <div class="home-wrap">
@@ -43,17 +41,11 @@ $this->setPageTitle(Yii::t('app', 'Admin'));
             </p>
         </div>
     </div>
-        <?= Nav::widget([
-            'items' => HomePanel::getListItems(),
-            'options' => [
-                'class' => 'home-nav',
-            ],
-        ]); ?>
         <?php
         foreach ($panels as $panel) {
             ?>
             <?= Nav::widget([
-                'items' => $panel::getListItems(),
+                'items' => $panel['items'],
                 'options' => [
                     'class' => 'home-nav',
                 ],
