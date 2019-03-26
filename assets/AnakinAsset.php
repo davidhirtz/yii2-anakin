@@ -2,6 +2,7 @@
 
 namespace davidhirtz\yii2\anakin\assets;
 
+use davidhirtz\yii2\media\assets\AdminAsset;
 use yii\web\AssetBundle;
 use Yii;
 
@@ -32,7 +33,7 @@ class AnakinAsset extends AssetBundle
      * @var array
      */
     public $depends = [
-        'app\assets\AppAsset',
+        AdminAsset::class,
     ];
 
     /**
