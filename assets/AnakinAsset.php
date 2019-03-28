@@ -2,7 +2,7 @@
 
 namespace davidhirtz\yii2\anakin\assets;
 
-use davidhirtz\yii2\media\assets\AdminAsset;
+use davidhirtz\yii2\skeleton\assets\AdminAsset;
 use yii\web\AssetBundle;
 use Yii;
 
