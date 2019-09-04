@@ -62,12 +62,12 @@ Navbar.
  */
 $app-navbar-nav-link-padding-y: 20px;
 $navbar-nav-link-padding-x: 20px;
-$app-navbar-background: #fff;
+$app-navbar-background: $body-bg;
 $app-navbar-dark-hover-bg: $border-color;
-$navbar-dark-active-bg: #fff;
+$navbar-dark-active-bg: $body-text;
 $navbar-dark-color: $body-text;
 $navbar-dark-hover-color: $body-text;
-$navbar-dark-active-color: $body-text;
+$navbar-dark-active-color: $body-bg;
 $anakin-navbar-dark-border-color: $border-color;
 $navbar-border: 1px solid $anakin-navbar-dark-border-color;
 
