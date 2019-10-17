@@ -23,13 +23,14 @@ class Bootstrap implements BootstrapInterface
     {
         Yii::setAlias('@anakin', dirname(__DIR__));
 
+        // Registers Anakin assets on Admin module.
         $app->on(Application::EVENT_BEFORE_ACTION, function (yii\base\ActionEvent $event) {
             if ($event->action->controller->module instanceof Module || $event->action->controller->module->module instanceof Module) {
                 $this->extendComponents(Yii::$app, [
                     'assetManager' => [
                         'bundles' => [
                             'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset' => [
-                                'editorAssetBundle' => 'davidhirtz\yii2\anakin\assets\AnakinAsset',
+                                'sourcePath' => '@anakin/assets/ckeditor-bootstrap',
                             ],
                             'davidhirtz\yii2\skeleton\assets\AdminAsset' => [
                                 'css' => [],

@@ -1,0 +1,13 @@
+/**
+ * CKEditor editor.
+ */
+@import "../../anakin/scss/includes/variables";
+@import "../../../../yii2-skeleton/assets/admin/scss/includes/variables";
+
+//$input-border-color: $gray-400;
+
+@import "../../../../yii2-skeleton/assets/ckeditor-bootstrap/scss/editor";
+
+.cke_inner {
+  box-shadow: $input-box-shadow;
+}

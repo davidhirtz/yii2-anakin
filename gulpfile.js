@@ -26,8 +26,7 @@ var options={
 // CSS.
 function scss()
 {
-	// noinspection JSUnresolvedFunction
-	return gulp.src('assets/*/scss/*.scss', {base:'./'})
+	gulp.src('assets/*/scss/*.scss', {base:'./'})
 		.pipe(sourcemaps.init())
 		.pipe(sass(options.sass).on('error', sass.logError))
 		.pipe(autoprefixer(options.autoprefixer))
@@ -41,6 +40,18 @@ function scss()
 		.pipe(gulp.dest('.'))
 		.pipe(cssnano())
 		.pipe(rename({suffix:'.min'}))
+		.pipe(gulp.dest('.'));
+
+
+	return gulp.src('assets/ckeditor-bootstrap/scss/*.scss', {base: './'})
+		.pipe(sourcemaps.init())
+		.pipe(sass(options.sass).on('error', sass.logError))
+		.pipe(autoprefixer(options.autoprefixer))
+		.pipe(sourcemaps.write())
+		.pipe(rename(function (path) {
+			path.dirname = path.dirname.slice(0, -4);
+		}))
+		.pipe(cssnano())
 		.pipe(gulp.dest('.'));
 }
 
@@ -61,8 +72,7 @@ function images()
 // Watcher.
 function watch()
 {
-	gulp.watch('assets/*/scss/**/_*.scss', scss);
-	gulp.watch('assets/*/scss/*.scss', scss);
+	gulp.watch(['assets/*/scss/*.scss', 'assets/*/scss/**/_*.scss'], scss);
 }
 
 // Tasks.
