@@ -1,5 +1,45 @@
 /**
  * CKEditor dialog.
  */
+// Anakin.
 @import "../../anakin/scss/includes/variables";
+@import "../../anakin/scss/includes/mixins";
+@import "includes/variables";
+@import "../../../../yii2-skeleton/assets/admin/scss/includes/variables";
 @import "../../../../yii2-skeleton/assets/ckeditor-bootstrap/scss/dialog";
+
+%shadow {
+  @include box-shadow($input-box-shadow);
+}
+
+.cke_dialog_body {
+  @include box-shadow($dropdown-box-shadow);
+}
+
+.cke_dialog_ui_input_text {
+  @extend %shadow;
+}
+
+
+.cke_dialog_ui_input_select {
+  @extend %shadow;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+.cke_dialog_ui_labeled_label {
+  @extend %bebas;
+}
+
+.cke_dialog_title {
+  @extend %bebas;
+  font-size: $h2-font-size;
+}
+
+.a.cke_dialog_tab{
+  @extend %bebas;
+}
+
+a.cke_dialog_ui_button {
+  @extend %bebas;
+}
