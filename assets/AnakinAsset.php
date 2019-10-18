@@ -37,7 +37,7 @@ class AnakinAsset extends AssetBundle
      */
     public $publishOptions = [
         'except' => [
-            'scss/*',
+            'scss/',
         ],
     ];
 
