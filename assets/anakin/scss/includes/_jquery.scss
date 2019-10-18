@@ -1,0 +1,8 @@
+.ui-datepicker {
+  @include box-shadow($dropdown-box-shadow);
+}
+
+.ui-datepicker-title, .ui-datepicker th {
+  @extend %bebas;
+  font-weight: inherit;
+}

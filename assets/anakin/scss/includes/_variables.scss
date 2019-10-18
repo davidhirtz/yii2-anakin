@@ -40,7 +40,7 @@ $app-header-margin: 40px 0 20px;
 Border.
  */
 $border-radius: 0;
-$border-size: 0;
+$border-width: 0;
 $border-color: #ebebeb;
 
 /*
@@ -159,10 +159,10 @@ Tables.
 $table-cell-padding: 15px;
 $app-table-th-active-font-style: normal;
 
-//
-///**
-//Pagination.
-// */
+
+/*
+Pagination.
+*/
 $pagination-hover-color: $body-text;
 $dropdown-spacer: 0;
 
@@ -176,3 +176,8 @@ $badge-font-weight: 700;
 $badge-padding-y: 3px;
 $badge-padding-x: 5px;
 $badge-border-radius: 0;
+
+/*
+Datepicker
+ */
+$datepicker-td-border: 1px solid transparent;
