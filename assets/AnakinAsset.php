@@ -25,33 +25,26 @@ class AnakinAsset extends AssetBundle
     /**
      * @var array
      */
-    public $css = [
-        'css/app.min.css',
-    ];
+    public $css = [YII_DEBUG ? 'css/admin.css' : 'css/admin.min.css'];
 
     /**
      * @var array
      */
-    public $depends = [
-        AdminAsset::class,
+    public $depends = [AdminAsset::class];
+
+    /**
+     * @var array
+     */
+    public $publishOptions = [
+        'except' => [
+            'scss/',
+        ],
     ];
 
     /**
      * @var string
      */
     protected $_logoUrl;
-
-    /**
-     * Debug.
-     */
-    public function init()
-    {
-        if (YII_DEBUG) {
-            $this->css = ['css/app.css'];
-        }
-
-        parent::init();
-    }
 
     /**
      * @return false|string
