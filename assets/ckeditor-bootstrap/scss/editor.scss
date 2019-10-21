@@ -1,7 +1,6 @@
 /**
  * CKEditor editor.
  */
-
 // Anakin.
 @import "../../anakin/scss/includes/variables";
 @import "../../anakin/scss/includes/mixins";
@@ -9,6 +8,10 @@
 @import "../../../../yii2-skeleton/assets/admin/scss/includes/variables";
 @import "../../../../yii2-skeleton/assets/ckeditor-bootstrap/scss/editor";
 
-.cke_editable{
+.cke_editable {
   @include box-shadow($input-box-shadow);
+
+  a {
+    color: $link-hover-color;
+  }
 }
