@@ -26,7 +26,7 @@ var options={
 // CSS.
 function scss()
 {
-	gulp.src('assets/*/scss/*.scss', {base:'./'})
+	gulp.src('assets/anakin/scss/*.scss', {base:'./'})
 		.pipe(sourcemaps.init())
 		.pipe(sass(options.sass).on('error', sass.logError))
 		.pipe(autoprefixer(options.autoprefixer))
