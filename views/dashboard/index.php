@@ -15,7 +15,7 @@ $logoUrl = $bundle->getLogoUrl();
 $this->registerJs('$("body").addClass("home");');
 $this->registerCSS('.breadcrumb{visibility:hidden;}');
 
-$this->setTitle(Yii::t('app', 'Admin'));
+$this->setTitle(Yii::t('skeleton', 'Admin'));
 ?>
 <div class="text-center">
     <div class="home-wrap">
