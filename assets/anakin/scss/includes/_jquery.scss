@@ -6,3 +6,7 @@
   @extend %bebas;
   font-weight: inherit;
 }
+
+.ui-autocomplete{
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.13);
+}
