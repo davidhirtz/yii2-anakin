@@ -1,4 +1,6 @@
 ﻿CKEDITOR.skin.name = 'skeleton';
+CKEDITOR.skin.ua_editor="";
+CKEDITOR.skin.ua_dialog="";
 CKEDITOR.skin.icons = {};
 
 var icons = ['blockquote', 'bold', 'bulletedlist', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'italic', 'link', 'linkbutton', 'numberedlist', 'removeformat', 'source', 'strike', 'table', 'underline', 'unlink'],
