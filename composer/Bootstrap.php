@@ -47,7 +47,7 @@ class Bootstrap implements BootstrapInterface
                     ],
                     'mailer' => [
                         'htmlLayout' => '@anakin/views/layouts/mail',
-                    ]
+                    ],
                 ]);
 
                 $view = Yii::$app->getView();
