@@ -1,7 +1,11 @@
-.btn{
-	@extend %bebas;
+.btn {
+  @extend %bebas;
 }
 
-.btn-danger{
-	color:$white!important;
+.btn-danger {
+  color: $white !important;
+}
+
+.btn-submit {
+  background-color: $success !important;
 }
