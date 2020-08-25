@@ -6,6 +6,6 @@
   color: $white !important;
 }
 
-.btn-submit:not(.btn-danger) {
+.btn-submit:not(.btn-danger), .btn-import, .btn-upload {
   background-color: $success !important;
 }
