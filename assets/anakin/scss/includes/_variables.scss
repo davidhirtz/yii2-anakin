@@ -69,7 +69,6 @@ $navbar-dark-active-color: $body-bg;
 $anakin-navbar-dark-border-color: $border-color;
 $navbar-border: 1px solid $anakin-navbar-dark-border-color;
 
-
 /*
 Breadcrumbs.
  */
@@ -152,6 +151,8 @@ $input-box-shadow: inset 2px 2px 6px 0 rgba(0, 0, 0, 0.13) !important;
 
 $hr-border-width: 1px;
 $hr-border: #ebebeb;
+
+$app-form-sticky-border-width: $hr-border-width !default;
 
 /*
 Tables.
