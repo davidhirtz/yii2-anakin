@@ -19,8 +19,9 @@ $anakin-success-bg: #d1e8ef;
 $app-info-text: $body-text;
 
 $btn-primary-bg: #000;
-$btn-secondary-bg: #ddd;
-$btn-secondary-hover-bg: #ccc;
+$btn-secondary-bg: $anakin-success-bg;
+$btn-secondary-hover-bg: darken($anakin-success-bg, 10%);
+$btn-secondary-active-bg: $link-hover-color;
 
 /*
 Grid.
