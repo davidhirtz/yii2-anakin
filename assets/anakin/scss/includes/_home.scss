@@ -1,49 +1,50 @@
-.home{
-	background:url(../images/bg.png);
-	background-size:cover;
+.home {
+  background: url(../images/bg.png);
+  background-size: cover;
 }
 
-.home-wrap{
-	margin:50px 0;
+.home-wrap {
+  margin: 50px 0;
 }
 
-.home-welcome{
-	background:url(../images/welcome.svg) no-repeat 50% 0;
+.home-welcome {
+  background: url(../images/welcome.svg) no-repeat 50% 0;
 }
 
-.home-logo{
-	margin:0 auto 70px;
+.home-logo {
+  max-width: 250px;
+  margin: 0 auto 70px;
 
-	img{
-		width:auto;
-	}
+  img {
+    width: auto;
+  }
 }
 
-.home-nav{
-	justify-content:center;
+.home-nav {
+  justify-content: center;
 
-	& > li{
-		margin:0 5px 20px;
+  & > li {
+    margin: 0 5px 20px;
 
-		& > a{
-			color:#fff !important;
-			background-color:#000 !important;
-		}
-	}
+    & > a {
+      color: #fff !important;
+      background-color: #000 !important;
+    }
+  }
 }
 
-.home-footer{
-	margin-top:80px;
+.home-footer {
+  margin-top: 80px;
 }
 
-.home-anakin{
-	display:block;
-	margin:50px auto 35px;
-	width:151px;
-	height:233px;
-	background:url(../images/ANAKIN.svg);
+.home-anakin {
+  display: block;
+  margin: 50px auto 35px;
+  width: 151px;
+  height: 233px;
+  background: url(../images/ANAKIN.svg);
 }
 
-#skype{
-	background-color:$link-hover-color !important;
+#skype {
+  background-color: $link-hover-color !important;
 }
