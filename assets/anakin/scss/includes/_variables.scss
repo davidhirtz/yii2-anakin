@@ -23,6 +23,8 @@ $btn-secondary-bg: $anakin-success-bg;
 $btn-secondary-hover-bg: darken($anakin-success-bg, 10%);
 $btn-secondary-active-bg: $link-hover-color;
 
+$trail-ins-bg: $anakin-success-bg;
+
 /*
 Grid.
  */
@@ -182,3 +184,8 @@ $badge-border-radius: 0;
 Datepicker
  */
 $datepicker-td-border: 1px solid transparent;
+
+/*
+Trail.
+ */
+$trail-ins-bg: #B7DABB;
