@@ -3,6 +3,10 @@ Config.
  */
 $enable-shadows: true;
 
+$container-max-widths: (
+        xl: 1500px
+) !default;
+
 /*
 Colors.
  */
@@ -108,7 +112,6 @@ $input-padding-y: $input-btn-padding-y;
 $input-padding-x: $input-btn-padding-y;
 $input-height: 45px;
 
-
 /*
 List group.
  */
@@ -162,6 +165,7 @@ $app-form-sticky-border-width: $hr-border-width !default;
 Tables.
  */
 $table-cell-padding: 15px;
+$table-border-color: #fff;
 
 /*
 Pagination.
