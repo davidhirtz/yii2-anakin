@@ -19,6 +19,11 @@ class AnakinMailAsset extends AnakinAsset
     public $showAnakinLogo = true;
 
     /**
+     * @var string width of logo as CSS string
+     */
+    public $logoWidth = '250px';
+
+    /**
      * Removes all Javascript or CSS files, we only need the asset path for
      * the published font.
      */

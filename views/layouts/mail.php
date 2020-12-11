@@ -177,6 +177,13 @@ $logo=$asset->getLogoUrl();
         text-align:center;
     }
 
+    .logo {
+        display: inline-block;
+        margin: 0 auto;
+        width: <?= $asset->logoWidth; ?>;
+    }
+
+
     .anakin{
         margin:65px auto 0;
         width:70px;
@@ -186,7 +193,7 @@ $logo=$asset->getLogoUrl();
 if($logo)
 {
     ?>
-    <div class="header"><img src="<?= Url::to($logo, true); ?>" alt="<?= Yii::$app->name; ?>"></div>
+    <div class="header"><img src="<?= Url::to($logo, true); ?>" class="logo" alt="<?= Yii::$app->name; ?>"></div>
     <?php
 }
 ?>
