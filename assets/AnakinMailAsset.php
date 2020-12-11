@@ -11,7 +11,7 @@ class AnakinMailAsset extends AnakinAsset
     /**
      * The default logo url.
      */
-    const DEFAULT_LOGO_URL = '/images/mail/logo.svg';
+    public const DEFAULT_LOGO_URL = '/images/mail/logo.svg';
 
     /**
      * Removes all Javascript or CSS files, we only need the asset path for

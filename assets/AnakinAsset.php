@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 use Yii;
 
 /**
- * Class AnakinAsset.
+ * Class AnakinAsset
  * @package davidhirtz\yii2\anakin\assets
  */
 class AnakinAsset extends AssetBundle
@@ -15,7 +15,7 @@ class AnakinAsset extends AssetBundle
     /**
      * The default logo url.
      */
-    const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
+    public const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
     /**
      * @var string
@@ -31,6 +31,11 @@ class AnakinAsset extends AssetBundle
      * @var array
      */
     public $depends = [AdminAsset::class];
+
+    /**
+     * @var bool
+     */
+    public $showAnakinLogo = true;
 
     /**
      * @var array

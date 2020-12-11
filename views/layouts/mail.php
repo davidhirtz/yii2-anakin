@@ -186,7 +186,7 @@ $logo=$asset->getLogoUrl();
 if($logo)
 {
     ?>
-    <div class="header"><img src="<?= Url::to($logo, true); ?>" alt="<?= $app->name; ?>"></div>
+    <div class="header"><img src="<?= Url::to($logo, true); ?>" alt="<?= Yii::$app->name; ?>"></div>
     <?php
 }
 ?>
@@ -195,9 +195,13 @@ if($logo)
     <div>
         <?= $content ?>
     </div>
-    <div class="anakin">
-        <img src="<?= $baseUrl; ?>/images/ANAKIN.svg" alt="Anakin">
-    </div>
+    <?php if($asset->showAnakinLogo) {
+        ?>
+        <div class="anakin">
+            <img src="<?= $baseUrl . '/images/ANAKIN.svg'; ?>" alt="Anakin">
+        </div>
+        <?php
+    } ?>
 </div>
 <?php $this->endBody() ?>
 </body>
