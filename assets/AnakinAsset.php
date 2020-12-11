@@ -33,11 +33,6 @@ class AnakinAsset extends AssetBundle
     public $depends = [AdminAsset::class];
 
     /**
-     * @var bool
-     */
-    public $showAnakinLogo = true;
-
-    /**
      * @var array
      */
     public $publishOptions = [
