@@ -2,7 +2,7 @@
 
 namespace davidhirtz\yii2\anakin\composer;
 
-use davidhirtz\yii2\skeleton\composer\BootstrapTrait;
+use davidhirtz\yii2\anakin\assets\AnakinAsset;
 use davidhirtz\yii2\skeleton\modules\admin\Module;
 use davidhirtz\yii2\skeleton\web\Application;
 use yii\base\BootstrapInterface;
@@ -14,8 +14,6 @@ use Yii;
  */
 class Bootstrap implements BootstrapInterface
 {
-    use BootstrapTrait;
-
     /**
      * @param Application $app
      */
@@ -26,7 +24,7 @@ class Bootstrap implements BootstrapInterface
         // Registers Anakin assets on Admin module.
         $app->on(Application::EVENT_BEFORE_ACTION, function (yii\base\ActionEvent $event) {
             if ($event->action->controller->module instanceof Module || $event->action->controller->module->module instanceof Module) {
-                $this->extendComponents(Yii::$app, [
+                Yii::$app->extendComponents([
                     'assetManager' => [
                         'bundles' => [
                             'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset' => [
@@ -63,7 +61,7 @@ class Bootstrap implements BootstrapInterface
                     $view->theme->pathMap[$alias] = '@anakin/views/dashboard';
                 }
 
-                \davidhirtz\yii2\anakin\assets\AnakinAsset::register($view);
+                AnakinAsset::register($view);
             }
         });
     }
