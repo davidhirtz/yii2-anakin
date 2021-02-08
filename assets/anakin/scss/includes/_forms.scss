@@ -28,6 +28,10 @@
   background: $danger !important;
 }
 
+.form-group.disabled {
+  opacity: .5;
+}
+
 .input-group {
   .form-control {
     border-color: transparent !important;

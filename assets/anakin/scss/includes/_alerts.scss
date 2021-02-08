@@ -1,17 +1,22 @@
 /**
  * Alerts.
  */
-.alert{
-	border:0;
-	@extend %bebas;
-	color:$body-text!important;
+.alert {
+  border: 0;
+  @extend %bebas;
+  color: $body-text !important;
 }
 
-.alert-danger, .alert-success{
-	font-weight:bold;
+.alert-danger, .alert-success {
+  font-weight: bold;
 
 }
 
-.alert-error{
-	@extend .alert-danger;
+.alert-error {
+  @extend .alert-danger;
+}
+
+.close {
+  font-family: Arial, serif;
+  opacity: 1;
 }
