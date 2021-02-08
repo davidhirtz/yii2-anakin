@@ -30,6 +30,10 @@
 
 .form-group.disabled {
   opacity: .5;
+
+  .col-form-label {
+    text-decoration: line-through;
+  }
 }
 
 .input-group {
