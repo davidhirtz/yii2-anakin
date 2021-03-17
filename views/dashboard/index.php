@@ -13,7 +13,7 @@ $bundle = $this->getAssetManager()->getBundle('\davidhirtz\yii2\anakin\assets\An
 $logoUrl = $bundle->getLogoUrl();
 
 $this->registerJs('$("body").addClass("home");');
-$this->registerCSS('.breadcrumb{visibility:hidden;}');
+$this->registerCss('.breadcrumb{visibility:hidden;}');
 
 $this->setTitle(Yii::t('skeleton', 'Admin'));
 ?>
