@@ -46,6 +46,7 @@ $this->setTitle(Yii::t('skeleton', 'Admin'));
             ?>
             <?= Nav::widget([
                 'items' => $panel['items'],
+                'hideOneItem' => false,
                 'options' => [
                     'class' => 'home-nav',
                 ],
