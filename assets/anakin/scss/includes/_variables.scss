@@ -186,6 +186,13 @@ $badge-padding-x: 5px;
 $badge-border-radius: 0;
 
 /*
+Upload.
+ */
+$app-upload-progress-top: 60px !default;
+//$app-upload-progress-height: 10px !default;
+$app-upload-progress-bg: $primary;
+
+/*
 Datepicker
  */
 $datepicker-td-border: 1px solid transparent;
