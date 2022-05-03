@@ -1,25 +1,25 @@
 {
-	"name":"davidhirtz/yii2-anakin",
-	"type":"yii2-extension",
-	"description":"Yii2 Anakin Admin Skin",
-	"homepage":"http://www.davidhirtz.com/",
-	"minimum-stability":"dev",
-	"prefer-stable":true,
-	"require":{
-		"davidhirtz/yii2-skeleton":"*"
-	},
-	"autoload":{
-		"psr-4":{
-			"davidhirtz\\yii2\\anakin\\":""
-		}
-	},
-	"extra":{
-		"bootstrap":"davidhirtz\\yii2\\anakin\\composer\\Bootstrap"
-	},
-	"repositories":[
-		{
-			"type":"git",
-			"url":"git@github.com:davidhirtz/yii2-skeleton.git"
-		}
-	]
+  "name": "davidhirtz/yii2-anakin",
+  "type": "yii2-extension",
+  "description": "Yii2 Anakin Admin Skin",
+  "homepage": "https://www.anakin.co/",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "davidhirtz/yii2-skeleton": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "davidhirtz\\yii2\\anakin\\": ""
+    }
+  },
+  "extra": {
+    "bootstrap": "davidhirtz\\yii2\\anakin\\composer\\Bootstrap"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:davidhirtz/yii2-skeleton.git"
+    }
+  ]
 }
