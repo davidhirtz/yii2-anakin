@@ -1,7 +1,7 @@
 {
   "name": "davidhirtz/yii2-anakin",
   "type": "yii2-extension",
-  "description": "Yii2 Anakin Admin Skin",
+  "description": "Yii2 Anakin Admin Theme",
   "homepage": "https://www.anakin.co/",
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -15,11 +15,5 @@
   },
   "extra": {
     "bootstrap": "davidhirtz\\yii2\\anakin\\composer\\Bootstrap"
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git@github.com:davidhirtz/yii2-skeleton.git"
-    }
-  ]
+  }
 }
