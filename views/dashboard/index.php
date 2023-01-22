@@ -1,12 +1,14 @@
 <?php
 /**
- * Admin index.
+ * Admin index for Anakin theme.
  * @see \davidhirtz\yii2\skeleton\modules\admin\controllers\DashboardController::actionIndex()
- * @var \davidhirtz\yii2\skeleton\web\View $this
+ * @var View $this
  * @var array $panels
- * @var \davidhirtz\yii2\anakin\assets\AnakinAsset $bundle
+ * @var AnakinAsset $bundle
  */
 
+use davidhirtz\yii2\anakin\assets\AnakinAsset;
+use davidhirtz\yii2\skeleton\web\View;
 use davidhirtz\yii2\skeleton\widgets\fontawesome\Nav;
 
 $bundle = $this->getAssetManager()->getBundle('\davidhirtz\yii2\anakin\assets\AnakinAsset');
@@ -71,9 +73,9 @@ $this->setTitle(Yii::t('skeleton', 'Admin'));
     <div class="home-footer">
         <p><?= Yii::t('anakin', 'Need a hand?'); ?></p>
         <p>
-            <a href="mailto:hello@anakin.co">hello@anakin.co</a><br> Daniel <a href="tel:491707731849">+49 170 773
-                1849</a><br> Hans <a href="tel:491716266441">+49 171 6266441</a>
+            <a href="mailto:hello@anakin.co">hello@anakin.co</a><br>
+            Daniel <a href="tel:491707731849">+49 170 773 1849</a>
         </p>
-        <a href="http://www.anakin.co" class="home-anakin" target="_blank"></a>
+        <a href="https://www.anakin.co" class="home-anakin" target="_blank"></a>
     </div>
 </div>
