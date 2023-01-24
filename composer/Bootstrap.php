@@ -9,7 +9,7 @@ use yii\base\BootstrapInterface;
 use Yii;
 
 /**
- * Overrides the backend theme with the Anakin theme and sets default SMTP credentials.
+ * Overrides the backend theme with the Anakin theme and sets default email contact.
  */
 class Bootstrap implements BootstrapInterface
 {
@@ -19,12 +19,6 @@ class Bootstrap implements BootstrapInterface
     public function bootstrap($app)
     {
         Yii::setAlias('@anakin', dirname(__DIR__));
-
-        // Set SMTP credentials if available.
-        if ($password = (Yii::$app->params['anakinSmtpPassword'] ?? false)) {
-            Yii::$app->params['mailerDsn'] ??= "smtp://hello@anakin.co:{$password}@smtp.office365.com:25";
-        }
-
         Yii::$app->params['email'] ??= 'hello@anakin.co';
 
         // Registers Anakin assets on Admin module.
