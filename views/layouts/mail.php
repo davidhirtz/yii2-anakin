@@ -24,7 +24,7 @@ $logo=$asset->getLogoUrl();
 </head>
 <body>
 <?php $this->beginBody() ?>
-<style type="text/css">
+<style>
     @font-face {
         font-family: 'ATC Overlook';
         src: url(<?= $baseUrl; ?>/fonts/atcoverlook-regular-webfont.woff2) format('woff2'),
