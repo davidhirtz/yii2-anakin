@@ -32,6 +32,11 @@ class Bootstrap implements BootstrapInterface
                             ],
                             'davidhirtz\yii2\skeleton\assets\AdminAsset' => [
                                 'css' => [],
+                                'faviconOptions' => [
+                                    'href' => '/images/favicons/favicon-32x32.png',
+                                    'sizes' => '32x32',
+                                    'type' => 'image/png',
+                                ],
                             ],
                         ],
                     ],
