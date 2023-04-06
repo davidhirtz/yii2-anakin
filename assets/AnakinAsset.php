@@ -7,8 +7,7 @@ use yii\web\AssetBundle;
 use Yii;
 
 /**
- * Class AnakinAsset
- * @package davidhirtz\yii2\anakin\assets
+ * AnakinAsset is the asset bundle for the Anakin admin theme.
  */
 class AnakinAsset extends AssetBundle
 {
@@ -18,14 +17,9 @@ class AnakinAsset extends AssetBundle
     public const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
     /**
-     * @var string
-     */
-    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/assets/anakin';
-
-    /**
      * @var array
      */
-    public $css = [YII_DEBUG ? 'css/admin.css' : 'css/admin.min.css'];
+    public $css = ['css/admin.min.css'];
 
     /**
      * @var array
@@ -44,12 +38,17 @@ class AnakinAsset extends AssetBundle
     /**
      * @var string
      */
-    protected $_logoUrl;
+    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/assets/anakin';
+
+    /**
+     * @var string|null
+     */
+    protected ?string $_logoUrl = null;
 
     /**
      * @return false|string
      */
-    public function getLogoUrl()
+    public function getLogoUrl(): string|false
     {
         if ($this->_logoUrl === null) {
             $path = Yii::getAlias('@webroot') . static::DEFAULT_LOGO_URL;
@@ -60,9 +59,9 @@ class AnakinAsset extends AssetBundle
     }
 
     /**
-     * @param false|string $logoUrl
+     * @param string|false|null $logoUrl
      */
-    public function setLogoUrl($logoUrl)
+    public function setLogoUrl(string|false|null $logoUrl)
     {
         $this->_logoUrl = $logoUrl;
     }
