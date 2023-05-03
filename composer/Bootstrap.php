@@ -20,6 +20,7 @@ class Bootstrap implements BootstrapInterface
     public function bootstrap($app)
     {
         Yii::setAlias('@anakin', dirname(__DIR__));
+        $app->params['email'] ??= 'hello@anakin.co';
 
         // Registers Anakin assets on Admin module.
         $app->on(Application::EVENT_BEFORE_ACTION, function (yii\base\ActionEvent $event) {
@@ -51,15 +52,11 @@ class Bootstrap implements BootstrapInterface
                 $view = Yii::$app->getView();
                 $alias = '@skeleton/modules/admin/views/dashboard';
 
-                if ($view->theme === null) {
-                    $view->theme = Yii::createObject([
-                        'class' => '\yii\base\Theme',
-                    ]);
-                }
+                $view->theme ??= Yii::createObject([
+                    'class' => '\yii\base\Theme',
+                ]);
 
-                if (!isset($view->theme->pathMap[$alias])) {
-                    $view->theme->pathMap[$alias] = '@anakin/views/dashboard';
-                }
+                $view->theme->pathMap[$alias] ??= '@anakin/views/dashboard';
 
                 AnakinAsset::register($view);
             }
