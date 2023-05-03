@@ -56,15 +56,11 @@ class Bootstrap implements BootstrapInterface
                 $view = Yii::$app->getView();
                 $alias = '@skeleton/modules/admin/views/dashboard';
 
-                if ($view->theme === null) {
-                    $view->theme = Yii::createObject([
-                        'class' => '\yii\base\Theme',
-                    ]);
-                }
+                $view->theme ??= Yii::createObject([
+                    'class' => '\yii\base\Theme',
+                ]);
 
-                if (!isset($view->theme->pathMap[$alias])) {
-                    $view->theme->pathMap[$alias] = '@anakin/views/dashboard';
-                }
+                $view->theme->pathMap[$alias] ??= '@anakin/views/dashboard';
 
                 AnakinAsset::register($view);
             }
