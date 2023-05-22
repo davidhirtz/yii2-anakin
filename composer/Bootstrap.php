@@ -30,13 +30,9 @@ class Bootstrap implements BootstrapInterface
                             'davidhirtz\yii2\skeleton\assets\CKEditorBootstrapAsset' => [
                                 'sourcePath' => '@anakin/assets/ckeditor-bootstrap',
                             ],
+                            // Remove default CSS as the Anakin theme will restyle the admin area.
                             'davidhirtz\yii2\skeleton\assets\AdminAsset' => [
                                 'css' => [],
-                                'faviconOptions' => [
-                                    'href' => '/images/favicons/favicon-32x32.png',
-                                    'sizes' => '32x32',
-                                    'type' => 'image/png',
-                                ],
                             ],
                         ],
                     ],
@@ -52,6 +48,13 @@ class Bootstrap implements BootstrapInterface
                         'htmlLayout' => '@anakin/views/layouts/mail',
                     ],
                 ]);
+
+                // Set default favicon, this can be overridden in the config.
+                if ($bundle = (Yii::$app->getAssetManager()->bundles['davidhirtz\yii2\skeleton\assets\AdminAsset'] ?? false)) {
+                    $bundle['faviconOptions']['href'] ??= '/images/favicons/favicon-32x32.png';
+                    $bundle['faviconOptions']['sizes'] ??= '32x32';
+                    $bundle['faviconOptions']['type'] ??= 'image/png';
+                }
 
                 $view = Yii::$app->getView();
                 $alias = '@skeleton/modules/admin/views/dashboard';
