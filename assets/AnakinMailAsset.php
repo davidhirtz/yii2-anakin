@@ -2,10 +2,6 @@
 
 namespace davidhirtz\yii2\anakin\assets;
 
-/**
- * Class AnakinMailAsset
- * @package davidhirtz\yii2\anakin\assets
- */
 class AnakinMailAsset extends AnakinAsset
 {
     /**
@@ -27,7 +23,7 @@ class AnakinMailAsset extends AnakinAsset
      * Removes all Javascript or CSS files, we only need the asset path for
      * the published font.
      */
-    public function init()
+    public function init(): void
     {
         $this->css = $this->depends = $this->js = [];
         parent::init();

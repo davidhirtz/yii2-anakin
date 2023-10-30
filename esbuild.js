@@ -31,13 +31,9 @@ let context = await esbuild.context({
             out: 'assets/anakin/css/admin.min'
         },
         {
-            in: 'assets/ckeditor-bootstrap/scss/editor.scss',
-            out: 'assets/ckeditor-bootstrap/editor'
+            in: 'assets/anakin/scss/tinymce.scss',
+            out: 'assets/anakin/css/tinymce.min'
         },
-        {
-            in: 'assets/ckeditor-bootstrap/scss/dialog.scss',
-            out: 'assets/ckeditor-bootstrap/dialog'
-        }
     ],
     minify: true,
     outdir: './',

@@ -16,38 +16,19 @@ class AnakinAsset extends AssetBundle
      */
     public const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
-    /**
-     * @var array
-     */
     public $css = ['css/admin.min.css'];
-
-    /**
-     * @var array
-     */
     public $depends = [AdminAsset::class];
 
-    /**
-     * @var array
-     */
     public $publishOptions = [
         'except' => [
             'scss/',
         ],
     ];
 
-    /**
-     * @var string
-     */
     public $sourcePath = '@vendor/davidhirtz/yii2-anakin/assets/anakin';
 
-    /**
-     * @var string|null
-     */
     protected ?string $_logoUrl = null;
 
-    /**
-     * @return false|string
-     */
     public function getLogoUrl(): string|false
     {
         if ($this->_logoUrl === null) {
@@ -59,9 +40,9 @@ class AnakinAsset extends AssetBundle
     }
 
     /**
-     * @param string|false|null $logoUrl
+     * @noinspection PhpUnused
      */
-    public function setLogoUrl(string|false|null $logoUrl)
+    public function setLogoUrl(string|false|null $logoUrl): void
     {
         $this->_logoUrl = $logoUrl;
     }
