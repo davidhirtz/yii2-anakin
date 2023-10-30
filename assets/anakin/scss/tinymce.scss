@@ -108,14 +108,13 @@ code {
 // Buttons.
 .btn, .cta {
   display: inline-block;
+  padding: $btn-padding-y-sm $btn-padding-x-sm;
   font-weight: $btn-font-weight;
-  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  border: $btn-border-width solid transparent;
+  border: $btn-border-width solid #000;
+  border-radius: 6px;
+  color: #000;
   text-decoration: none;
-
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-base, $btn-line-height, $btn-border-radius);
-  @include button-variant($btn-primary-bg, $btn-primary-border-color, $btn-primary-hover-bg, $btn-primary-hover-border-color, $btn-primary-active-bg, $btn-primary-active-border-color);
 }
