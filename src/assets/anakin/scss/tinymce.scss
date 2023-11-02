@@ -1,11 +1,11 @@
-@import "../../../../yii2-skeleton/assets/admin/scss/includes/variables";
+@import "../../../../../yii2-skeleton/src/assets/admin/scss/includes/variables";
 
 @import "includes/variables";
 @import "includes/fonts";
 
-@import "../../../../yii2-skeleton/vendor/npm-asset/bootstrap/scss/functions";
-@import "../../../../yii2-skeleton/vendor/npm-asset/bootstrap/scss/variables";
-@import "../../../../yii2-skeleton/vendor/npm-asset/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
 
 body {
   padding: $input-padding-y $input-padding-x;

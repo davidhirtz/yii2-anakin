@@ -11,9 +11,6 @@ use Yii;
  */
 class AnakinAsset extends AssetBundle
 {
-    /**
-     * The default logo url.
-     */
     public const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
     public $css = ['css/admin.min.css'];
