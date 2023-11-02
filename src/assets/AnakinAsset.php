@@ -22,7 +22,7 @@ class AnakinAsset extends AssetBundle
         ],
     ];
 
-    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/assets/anakin';
+    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/src/assets/anakin';
 
     protected ?string $_logoUrl = null;
 
