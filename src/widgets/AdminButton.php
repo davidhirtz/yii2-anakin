@@ -23,10 +23,6 @@ class AdminButton extends BaseObject
      */
     public bool $toggleButtonOpacity = true;
 
-    /**
-     * @param array $options
-     * @return string
-     */
     public static function widget(array $options = []): string
     {
         $widget = new self($options);
@@ -39,9 +35,6 @@ class AdminButton extends BaseObject
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function registerCss(): void
     {
         if ($this->toggleButtonOpacity) {

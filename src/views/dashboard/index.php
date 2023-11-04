@@ -1,23 +1,24 @@
 <?php
 /**
- * Admin index for Anakin theme.
- * @see \davidhirtz\yii2\skeleton\modules\admin\controllers\DashboardController::actionIndex()
+ * @see DashboardController::actionIndex()
  * @var View $this
  * @var array $panels
  * @var AnakinAsset $bundle
  */
 
 use davidhirtz\yii2\anakin\assets\AnakinAsset;
+use davidhirtz\yii2\skeleton\modules\admin\controllers\DashboardController;
 use davidhirtz\yii2\skeleton\web\View;
 use davidhirtz\yii2\skeleton\widgets\fontawesome\Nav;
 
-$bundle = $this->getAssetManager()->getBundle('\davidhirtz\yii2\anakin\assets\AnakinAsset');
+$this->setTitle(Yii::t('skeleton', 'Admin'));
+
+$bundle = $this->getAssetManager()->getBundle(AnakinAsset::class);
 $logoUrl = $bundle->getLogoUrl();
 
 $this->registerJs('$("body").addClass("home");');
 $this->registerCss('.breadcrumb{visibility:hidden;}');
 
-$this->setTitle(Yii::t('skeleton', 'Admin'));
 ?>
 <div class="text-center">
     <div class="home-wrap">
@@ -43,33 +44,33 @@ $this->setTitle(Yii::t('skeleton', 'Admin'));
             </p>
         </div>
     </div>
-        <?php
-        foreach ($panels as $panel) {
-            ?>
-            <?= Nav::widget([
-                'items' => $panel['items'],
-                'hideOneItem' => false,
-                'options' => [
-                    'class' => 'home-nav',
-                ],
-            ]); ?>
-            <?php
-        }
+    <?php
+    foreach ($panels as $panel) {
         ?>
         <?= Nav::widget([
-            'items' => [
-                [
-                    'label' => Yii::t('anakin', 'Skype with ANAKIN'),
-                    'url' => 'skype:danozzzz',
-                    'linkOptions' => [
-                        'id' => 'skype',
-                    ],
-                ],
-            ],
+            'items' => $panel['items'],
+            'hideOneItem' => false,
             'options' => [
                 'class' => 'home-nav',
             ],
         ]); ?>
+        <?php
+    }
+    ?>
+    <?= Nav::widget([
+        'items' => [
+            [
+                'label' => Yii::t('anakin', 'Skype with ANAKIN'),
+                'url' => 'skype:danozzzz',
+                'linkOptions' => [
+                    'id' => 'skype',
+                ],
+            ],
+        ],
+        'options' => [
+            'class' => 'home-nav',
+        ],
+    ]); ?>
     <div class="home-footer">
         <p><?= Yii::t('anakin', 'Need a hand?'); ?></p>
         <p>
