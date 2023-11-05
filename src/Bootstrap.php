@@ -1,6 +1,6 @@
 <?php
 
-namespace davidhirtz\yii2\anakin\composer;
+namespace davidhirtz\yii2\anakin;
 
 use davidhirtz\yii2\anakin\assets\AnakinAsset;
 use davidhirtz\yii2\skeleton\assets\AdminAsset;
@@ -23,7 +23,7 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app): void
     {
-        Yii::setAlias('@anakin', dirname(__DIR__));
+        Yii::setAlias('@anakin', __DIR__);
         Yii::$app->params['email'] ??= 'hello@anakin.co';
 
         // Registers Anakin assets on Admin module.
