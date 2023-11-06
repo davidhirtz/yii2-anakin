@@ -69,7 +69,7 @@ class Bootstrap implements BootstrapInterface
         });
 
         Event::on(View::class, View::EVENT_BEGIN_PAGE, function () {
-            if (Yii::$app->controller->module instanceof Module || Yii::$app->module?->module instanceof Module) {
+            if (Yii::$app->controller->module instanceof Module || Yii::$app->controller->module?->module instanceof Module) {
                 AnakinAsset::register(Yii::$app->getView());
             }
         });

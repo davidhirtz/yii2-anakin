@@ -1,3 +1,7 @@
+## 2.0.4 (Nov 6, 2023)
+
+- Fixed a bug where the `AnakinAsset` was not registered
+
 ## 2.0.3 (Nov 6, 2023)
 
 - Fixed dashboard index view
