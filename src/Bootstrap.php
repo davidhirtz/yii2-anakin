@@ -11,7 +11,6 @@ use davidhirtz\yii2\skeleton\widgets\forms\TinyMceEditor;
 use yii\base\BootstrapInterface;
 use Yii;
 use yii\base\Event;
-use yii\base\Theme;
 use yii\i18n\PhpMessageSource;
 use yii\web\View;
 
@@ -55,6 +54,13 @@ class Bootstrap implements BootstrapInterface
             'mailer' => [
                 'htmlLayout' => '@anakin/views/layouts/mail',
             ],
+            'view' => [
+                'theme' => [
+                    'pathMap' => [
+                        '@skeleton/modules/admin/views/dashboard' => '@anakin/views/dashboard',
+                    ],
+                ],
+            ]
         ]);
 
         Event::on(TinyMceEditor::class, TinyMceEditor::EVENT_INIT, function ($event) {
@@ -64,10 +70,7 @@ class Bootstrap implements BootstrapInterface
 
         Event::on(View::class, View::EVENT_BEGIN_PAGE, function () {
             if (Yii::$app->controller->module instanceof Module || Yii::$app->module?->module instanceof Module) {
-                AnakinAsset::register($view = Yii::$app->getView());
-
-                $view->theme ??= Yii::createObject(Theme::class);
-                $view->theme->pathMap['@skeleton/modules/admin/views/dashboard'] ??= '@anakin/views/dashboard';
+                AnakinAsset::register(Yii::$app->getView());
             }
         });
     }

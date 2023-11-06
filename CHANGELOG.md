@@ -1,3 +1,7 @@
+## 2.0.3 (Nov 6, 2023)
+
+- Fixed dashboard index view
+
 ## 2.0.2 (Nov 6, 2023)
 
 - Changed bootstrap order to allow overriding favicon options in `config/web.php`
