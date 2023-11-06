@@ -15,6 +15,7 @@ class AnakinAsset extends AssetBundle
 
     public $css = ['css/admin.min.css'];
     public $depends = [AdminAsset::class];
+    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/src/assets/anakin';
 
     public $publishOptions = [
         'except' => [
@@ -22,8 +23,9 @@ class AnakinAsset extends AssetBundle
         ],
     ];
 
-    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/src/assets/anakin';
-
+    /**
+     * @var string|null {@see static::setLogoUrl()}
+     */
     protected ?string $_logoUrl = null;
 
     public function getLogoUrl(): string|false
@@ -36,9 +38,6 @@ class AnakinAsset extends AssetBundle
         return $this->_logoUrl;
     }
 
-    /**
-     * @noinspection PhpUnused
-     */
     public function setLogoUrl(string|false|null $logoUrl): void
     {
         $this->_logoUrl = $logoUrl;
