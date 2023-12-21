@@ -15,7 +15,7 @@ class AnakinAsset extends AssetBundle
 
     public $css = ['css/admin.min.css'];
     public $depends = [AdminAsset::class];
-    public $sourcePath = '@vendor/davidhirtz/yii2-anakin/src/assets/anakin';
+    public $sourcePath = '@anakin/assets/anakin';
 
     public $publishOptions = [
         'except' => [

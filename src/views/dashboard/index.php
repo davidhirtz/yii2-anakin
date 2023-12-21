@@ -58,6 +58,7 @@ $this->registerCss('.breadcrumb{visibility:hidden;}');
     }
     ?>
     <?= Nav::widget([
+        'hideOneItem' => false,
         'items' => [
             [
                 'label' => Yii::t('anakin', 'Skype with ANAKIN'),
