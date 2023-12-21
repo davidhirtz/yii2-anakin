@@ -3,8 +3,8 @@
 namespace davidhirtz\yii2\anakin\assets;
 
 use davidhirtz\yii2\skeleton\assets\AdminAsset;
-use yii\web\AssetBundle;
 use Yii;
+use yii\web\AssetBundle;
 
 /**
  * AnakinAsset is the asset bundle for the Anakin admin theme.

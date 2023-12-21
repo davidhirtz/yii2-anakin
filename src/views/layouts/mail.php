@@ -10,9 +10,9 @@ use davidhirtz\yii2\anakin\assets\AnakinMailAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$asset=AnakinMailAsset::register($this);
-$baseUrl=Url::to($asset->baseUrl, true);
-$logo=$asset->getLogoUrl();
+$asset = AnakinMailAsset::register($this);
+$baseUrl = Url::to($asset->baseUrl, true);
+$logo = $asset->getLogoUrl();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -190,8 +190,7 @@ $logo=$asset->getLogoUrl();
     }
 </style>
 <?php
-if($logo)
-{
+if ($logo) {
     ?>
     <div class="header"><img src="<?= Url::to($logo, true); ?>" class="logo" alt="<?= Yii::$app->name; ?>"></div>
     <?php
@@ -202,7 +201,7 @@ if($logo)
     <div>
         <?= $content ?>
     </div>
-    <?php if($asset->showAnakinLogo) {
+    <?php if ($asset->showAnakinLogo) {
         ?>
         <div class="anakin">
             <img src="<?= $baseUrl . '/images/ANAKIN.svg'; ?>" alt="Anakin">

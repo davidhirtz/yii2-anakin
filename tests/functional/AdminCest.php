@@ -6,8 +6,8 @@
 
 namespace davidhirtz\yii2\anakin\tests\functional;
 
-use davidhirtz\yii2\anakin\tests\support\FunctionalTester;
 use davidhirtz\yii2\anakin\tests\fixtures\UserFixture;
+use davidhirtz\yii2\anakin\tests\support\FunctionalTester;
 use davidhirtz\yii2\skeleton\db\Identity;
 use davidhirtz\yii2\skeleton\models\User;
 use Yii;

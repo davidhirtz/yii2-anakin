@@ -30,8 +30,7 @@ $this->registerCss('.breadcrumb{visibility:hidden;}');
                 <img src="<?= $logoUrl; ?>" alt="<?= Yii::$app->name; ?>">
             </div>
             <?php
-        }
-        ?>
+        } ?>
         <div class="home-welcome">
             <h1>
                 <?= Yii::t('anakin', 'Hello {name}, good to', [
