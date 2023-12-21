@@ -1,3 +1,8 @@
+## 2.1.0 (Dec 21, 2023)
+
+- Added Codeception test suite
+- Added GitHub Actions CI workflow
+
 ## 2.0.4 (Nov 6, 2023)
 
 - Fixed a bug where the `AnakinAsset` was not registered
