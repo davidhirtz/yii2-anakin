@@ -13,6 +13,7 @@ use davidhirtz\yii2\skeleton\widgets\fontawesome\Nav;
 
 $this->setTitle(Yii::t('skeleton', 'Admin'));
 
+/** @var AnakinAsset $bundle */
 $bundle = $this->getAssetManager()->getBundle(AnakinAsset::class);
 $logoUrl = $bundle->getLogoUrl();
 

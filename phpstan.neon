@@ -26,6 +26,7 @@ parameters:
         - vendor/davidhirtz/yii2-skeleton/Yii.php
 
     stubFiles:
+        - stubs/yii/Controller.stub
         - stubs/yii/BaseYii.stub
 
     earlyTerminatingMethodCalls:

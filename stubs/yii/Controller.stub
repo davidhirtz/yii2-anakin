@@ -1,0 +1,13 @@
+<?php
+
+namespace yii\base;
+
+class Controller
+{
+    /**
+     * @var Module|null;
+     */
+    public $module;
+}
+
+class Module {}
