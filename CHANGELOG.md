@@ -1,3 +1,7 @@
+## 2.1.2 (Jan 9, 2024)
+
+- Fixed tests
+
 ## 2.1.1 (Jan 9, 2024)
 
 - Updated TinyMCE CSS
