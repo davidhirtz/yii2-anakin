@@ -19,15 +19,13 @@ parameters:
         - tests
 
     excludePaths:
-        - src/gii/*
         - tests/_output/*
 
     scanFiles:
         - vendor/davidhirtz/yii2-skeleton/Yii.php
 
     stubFiles:
-        - stubs/yii/Controller.stub
-        - stubs/yii/BaseYii.stub
+        - vendor/davidhirtz/yii2-skeleton/stubs/yii/BaseYii.stub
 
     earlyTerminatingMethodCalls:
         yii\base\Application:

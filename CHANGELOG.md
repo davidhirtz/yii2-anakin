@@ -1,3 +1,7 @@
+## 2.1.1 (Jan 9, 2024)
+
+- Updated TinyMCE CSS
+
 ## 2.1.0 (Dec 21, 2023)
 
 - Added Codeception test suite

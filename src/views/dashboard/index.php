@@ -56,22 +56,22 @@ $this->registerCss('.breadcrumb{visibility:hidden;}');
         ]); ?>
         <?php
     }
-    ?>
+?>
     <?= Nav::widget([
-        'hideOneItem' => false,
-        'items' => [
-            [
-                'label' => Yii::t('anakin', 'Skype with ANAKIN'),
-                'url' => 'skype:danozzzz',
-                'linkOptions' => [
-                    'id' => 'skype',
-                ],
+    'hideOneItem' => false,
+    'items' => [
+        [
+            'label' => Yii::t('anakin', 'Skype with ANAKIN'),
+            'url' => 'skype:danozzzz',
+            'linkOptions' => [
+                'id' => 'skype',
             ],
         ],
-        'options' => [
-            'class' => 'home-nav',
-        ],
-    ]); ?>
+    ],
+    'options' => [
+        'class' => 'home-nav',
+    ],
+]); ?>
     <div class="home-footer">
         <p><?= Yii::t('anakin', 'Need a hand?'); ?></p>
         <p>

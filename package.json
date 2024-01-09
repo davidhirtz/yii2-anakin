@@ -11,7 +11,7 @@
 	"devDependencies": {
 		"autoprefixer": "^10.4.12",
 		"bootstrap": "^4.6.0",
-		"esbuild": "^0.17.15",
-		"esbuild-sass-plugin": "^2.8.0"
+		"esbuild": "^0.19.5",
+		"esbuild-sass-plugin": "^2.16.1"
 	}
 }
