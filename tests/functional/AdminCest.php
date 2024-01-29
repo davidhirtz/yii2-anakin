@@ -8,11 +8,12 @@ namespace davidhirtz\yii2\anakin\tests\functional;
 
 use davidhirtz\yii2\anakin\tests\support\FunctionalTester;
 use davidhirtz\yii2\skeleton\codeception\fixtures\UserFixtureTrait;
+use davidhirtz\yii2\skeleton\codeception\functional\BaseCest;
 use davidhirtz\yii2\skeleton\db\Identity;
 use davidhirtz\yii2\skeleton\models\User;
 use Yii;
 
-class AdminCest
+class AdminCest extends BaseCest
 {
     use UserFixtureTrait;
 
