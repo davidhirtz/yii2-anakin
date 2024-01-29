@@ -11,6 +11,7 @@ use davidhirtz\yii2\skeleton\widgets\forms\TinyMceEditor;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\Event;
+use yii\helpers\ReplaceArrayValue;
 use yii\i18n\PhpMessageSource;
 use yii\web\View;
 
@@ -25,6 +26,8 @@ class Bootstrap implements BootstrapInterface
     public function bootstrap($app): void
     {
         Yii::setAlias('@anakin', __DIR__);
+        Yii::setAlias('@skeleton/mail/layouts/html', '@anakin/views/layouts/mail');
+
         Yii::$app->params['email'] ??= 'hello@anakin.co';
 
         Yii::$app->extendComponents([
@@ -51,9 +54,6 @@ class Bootstrap implements BootstrapInterface
                     ],
                 ],
             ],
-            'mailer' => [
-                'htmlLayout' => '@anakin/views/layouts/mail',
-            ],
             'view' => [
                 'theme' => [
                     'pathMap' => [
@@ -69,7 +69,8 @@ class Bootstrap implements BootstrapInterface
         });
 
         Event::on(View::class, View::EVENT_BEGIN_PAGE, function () {
-            if (Yii::$app->controller->module instanceof Module || Yii::$app->controller->module->module instanceof Module) {
+            // @phpstan-ignore-next-line the controller might not be available during an exception in request handling
+            if (Yii::$app->controller?->module instanceof Module || Yii::$app->controller?->module->module instanceof Module) {
                 AnakinAsset::register(Yii::$app->getView());
             }
         });

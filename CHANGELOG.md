@@ -1,3 +1,7 @@
+## 2.1.3 (Jan 29, 2024)
+
+- Fixed `Mailer::$htmlLayout` path
+
 ## 2.1.2 (Jan 9, 2024)
 
 - Fixed tests
