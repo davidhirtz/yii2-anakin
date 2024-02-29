@@ -42,9 +42,9 @@
     background: transparent;
     box-shadow: none !important;
   }
-}
 
-input:-webkit-autofill {
-  transition: background-color 5000s ease-in-out 0s !important;
-  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  }
 }

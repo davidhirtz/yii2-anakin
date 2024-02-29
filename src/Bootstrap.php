@@ -11,7 +11,6 @@ use davidhirtz\yii2\skeleton\widgets\forms\TinyMceEditor;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\Event;
-use yii\helpers\ReplaceArrayValue;
 use yii\i18n\PhpMessageSource;
 use yii\web\View;
 

@@ -9,7 +9,6 @@ namespace davidhirtz\yii2\anakin\tests\functional;
 use davidhirtz\yii2\anakin\tests\support\FunctionalTester;
 use davidhirtz\yii2\skeleton\codeception\fixtures\UserFixtureTrait;
 use davidhirtz\yii2\skeleton\codeception\functional\BaseCest;
-use davidhirtz\yii2\skeleton\db\Identity;
 use davidhirtz\yii2\skeleton\models\User;
 use Yii;
 
@@ -34,10 +33,12 @@ class AdminCest extends BaseCest
 
     protected function getLoggedInUser(): User
     {
-        $user = Identity::find()->one();
-        $user->loginType = 'test';
+        $webuser = Yii::$app->getUser();
+        $webuser->loginType = 'test';
 
-        Yii::$app->getUser()->login($user);
+        $user = User::find()->one();
+        $webuser->login($user);
+
         return $user;
     }
 }

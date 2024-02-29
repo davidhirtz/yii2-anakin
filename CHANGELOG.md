@@ -1,3 +1,7 @@
+## 2.1.4 (Feb 29, 2024)
+
+- Changed CSS definition `input:-webkit-autofill`
+
 ## 2.1.3 (Jan 29, 2024)
 
 - Fixed `Mailer::$htmlLayout` path
