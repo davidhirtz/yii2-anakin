@@ -1,3 +1,7 @@
+## 2.1.5 (Mar 11, 2024)
+
+- Added `color` input support
+
 ## 2.1.4 (Feb 29, 2024)
 
 - Changed CSS definition `input:-webkit-autofill`
