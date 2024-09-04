@@ -1,3 +1,7 @@
+## 2.1.6 (Sep 4, 2024)
+
+- Forced light mode only in email templates
+
 ## 2.1.5 (Mar 11, 2024)
 
 - Added `color` input support
