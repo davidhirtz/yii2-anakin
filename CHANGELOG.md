@@ -1,3 +1,7 @@
+## 2.1.7 (Oct 2, 2024)
+
+- Added `.text-invalid` CSS class
+
 ## 2.1.6 (Sep 4, 2024)
 
 - Forced light mode only in email templates
