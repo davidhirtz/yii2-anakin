@@ -1,7 +1,8 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- * Email layout.
- *
  * @var yii\web\View $this
  * @var string $content
  */
@@ -49,34 +50,34 @@ $logo = $asset->getLogoUrl();
         font-style: normal;
     }
 
-    *{
-        -webkit-box-sizing:border-box;
-        -moz-box-sizing:border-box;
-        box-sizing:border-box;
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
-    body{
-        margin:0;
-        padding:0;
-        font:16px/1.4 'ATC Overlook', sans-serif;
-        color:#000;
-        background-color:#fff;
+    body {
+        margin: 0;
+        padding: 0;
+        font: 16px/1.4 'ATC Overlook', sans-serif;
+        color: #000;
+        background-color: #fff;
     }
 
-    .wrap{
-        margin:60px auto 30px;
-        padding:20px;
-        max-width:500px;
+    .wrap {
+        margin: 60px auto 30px;
+        padding: 20px;
+        max-width: 500px;
     }
 
-    img{
-        border:0;
+    img {
+        border: 0;
     }
 
     a {
         color: #000;
         text-decoration: none;
-        font-weight:bold;
+        font-weight: bold;
     }
 
     a:hover, a:focus {
@@ -84,74 +85,74 @@ $logo = $asset->getLogoUrl();
         text-decoration: none;
     }
 
-    h1{
-        margin:0 0 40px;
-        padding:0 0 10px;
-        font:24px/1.1 'ATC Overlook', sans-serif;
-        font-weight:bold;
+    h1 {
+        margin: 0 0 40px;
+        padding: 0 0 10px;
+        font: 24px/1.1 'ATC Overlook', sans-serif;
+        font-weight: bold;
         color: #000;
         letter-spacing: 0;
-        border-bottom:3px solid #000;
+        border-bottom: 3px solid #000;
     }
 
-    p{
-        margin:0;
+    p {
+        margin: 0;
     }
 
-    p:first-child{
-        color:#71BCD2;
-        font-weight:bold;
+    p:first-child {
+        color: #71BCD2;
+        font-weight: bold;
     }
 
-    p:not(:last-child){
-        margin-bottom:1em;
+    p:not(:last-child) {
+        margin-bottom: 1em;
     }
 
-    table, tbody{
-        display:block;
+    table, tbody {
+        display: block;
     }
 
     table {
-        margin:30px 0;
+        margin: 30px 0;
         background-color: transparent;
         border-collapse: collapse;
         border-spacing: 0;
     }
 
-    tr{
-        display:block;
-        margin-bottom:10px;
-        padding:8px 15px;
-        box-shadow: 0 1px 12px 5px rgba(0,0,0,0.04);
+    tr {
+        display: block;
+        margin-bottom: 10px;
+        padding: 8px 15px;
+        box-shadow: 0 1px 12px 5px rgba(0, 0, 0, 0.04);
     }
 
     td:first-child {
-        display:block;
+        display: block;
         padding: 0;
-        font-size:14px;
-        color:#71BCD2;
+        font-size: 14px;
+        color: #71BCD2;
     }
 
 
-    .btn-wrap{
-        margin-top:40px;
-        text-align:center;
+    .btn-wrap {
+        margin-top: 40px;
+        text-align: center;
     }
 
     .btn {
         display: inline-block;
         margin-bottom: 0;
-        font:16px/1 'Bebas Neue', sans-serif;
-        font-weight:bold;
+        font: 16px/1 'Bebas Neue', sans-serif;
+        font-weight: bold;
         text-align: center;
-        text-transform:uppercase;
-        letter-spacing:2px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         vertical-align: middle;
         touch-action: manipulation;
         cursor: pointer;
-        border:0;
+        border: 0;
         white-space: nowrap;
-        min-width:120px;
+        min-width: 120px;
         padding: 12px;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -168,13 +169,13 @@ $logo = $asset->getLogoUrl();
     .btn-primary:hover {
         color: #fff;
         background-color: #4eaac4;
-        text-decoration:none;
+        text-decoration: none;
     }
 
-    .header{
-        box-shadow: 0 1px 12px 5px rgba(0,0,0,0.04);
-        padding:40px;
-        text-align:center;
+    .header {
+        box-shadow: 0 1px 12px 5px rgba(0, 0, 0, 0.04);
+        padding: 40px;
+        text-align: center;
     }
 
     .logo {
@@ -184,9 +185,9 @@ $logo = $asset->getLogoUrl();
     }
 
 
-    .anakin{
-        margin:65px auto 0;
-        width:70px;
+    .anakin {
+        margin: 65px auto 0;
+        width: 70px;
     }
 </style>
 <?php

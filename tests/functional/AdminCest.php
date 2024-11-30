@@ -4,6 +4,8 @@
  * @noinspection PhpUnused
  */
 
+declare(strict_types=1);
+
 namespace davidhirtz\yii2\anakin\tests\functional;
 
 use davidhirtz\yii2\anakin\tests\support\FunctionalTester;

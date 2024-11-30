@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace davidhirtz\yii2\anakin\assets;
 
 class AnakinMailAsset extends AnakinAsset
@@ -17,7 +19,7 @@ class AnakinMailAsset extends AnakinAsset
     public string $logoWidth = '250px';
 
     /**
-     * Removes all Javascript and CSS files, we only need the asset path for the published font.
+     * Removes all JavaScript and CSS files, we only need the asset path for the published font.
      */
     public function init(): void
     {

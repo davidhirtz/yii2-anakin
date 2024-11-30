@@ -1,10 +1,8 @@
 <?php
 
-use davidhirtz\yii2\anakin\Bootstrap;
+declare(strict_types=1);
 
-if (is_file(__DIR__ . '/db.php')) {
-    require(__DIR__ . '/db.php');
-}
+use davidhirtz\yii2\anakin\Bootstrap;
 
 return [
     'aliases' => [

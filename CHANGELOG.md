@@ -1,3 +1,8 @@
+## 2.1.5 (Nov 30, 2024)
+
+- Forced strict types in all PHP files
+- Updated dependencies
+
 ## 2.1.4 (Feb 29, 2024)
 
 - Changed CSS definition `input:-webkit-autofill`

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace davidhirtz\yii2\anakin\assets;
 
 use davidhirtz\yii2\skeleton\assets\AdminAsset;
@@ -23,10 +25,7 @@ class AnakinAsset extends AssetBundle
         ],
     ];
 
-    /**
-     * @var string|null {@see static::setLogoUrl()}
-     */
-    protected ?string $_logoUrl = null;
+    protected string|null|false $_logoUrl = null;
 
     public function getLogoUrl(): string|false
     {

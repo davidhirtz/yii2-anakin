@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace davidhirtz\yii2\anakin\tests\unit;
 
 use Codeception\Test\Unit;
@@ -25,6 +27,7 @@ class TinyMceEditorTest extends Unit
     public function testEditorConfig(): void
     {
         $asset = AnakinAsset::register(Yii::$app->getView());
+
         $editor = Yii::$container->get(TinyMceEditor::class, [], [
             'name' => 'test',
         ]);
