@@ -1,7 +1,19 @@
-## 2.1.5 (Nov 30, 2024)
+## 2.1.8 (Nov 30, 2024)
 
 - Forced strict types in all PHP files
 - Updated dependencies
+- 
+## 2.1.7 (Oct 2, 2024)
+
+- Added `.text-invalid` CSS class
+
+## 2.1.6 (Sep 4, 2024)
+
+- Forced light mode only in email templates
+
+## 2.1.5 (Mar 11, 2024)
+
+- Added `color` input support
 
 ## 2.1.4 (Feb 29, 2024)
 

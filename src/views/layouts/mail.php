@@ -1,8 +1,7 @@
 <?php
-
-declare(strict_types=1);
-
 /**
+ * Email layout.
+ *
  * @var yii\web\View $this
  * @var string $content
  */
@@ -20,6 +19,7 @@ $logo = $asset->getLogoUrl();
 <html lang="<?= Yii::$app->getI18n()->getLanguageCode(); ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
+    <meta name="color-scheme" content="only">
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
@@ -50,9 +50,11 @@ $logo = $asset->getLogoUrl();
         font-style: normal;
     }
 
+    :root {
+        color-scheme: light only;
+    }
+
     * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
