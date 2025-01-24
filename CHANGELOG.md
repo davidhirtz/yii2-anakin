@@ -1,3 +1,7 @@
+## 2.1.9 (Jan 24, 2024)
+
+- Changed `Bootstrap` I18N configuration
+
 ## 2.1.8 (Nov 30, 2024)
 
 - Forced strict types in all PHP files
