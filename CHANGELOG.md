@@ -1,3 +1,8 @@
+## 2.2.0 (Oct 20, 2025)
+
+- Requires PHP 8.3+
+- Added Russian language support
+
 ## 2.1.9 (Jan 24, 2024)
 
 - Changed `Bootstrap` I18N configuration
