@@ -156,16 +156,16 @@
         },
         {
             "name": "davidhirtz/yii2-skeleton",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidhirtz/yii2-skeleton.git",
-                "reference": "54c35afd5c3cf53f756aed7619ca3c10e80fa23c"
+                "reference": "74253476f5551543e3a0a6819794ff2e3d93ff6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidhirtz/yii2-skeleton/zipball/54c35afd5c3cf53f756aed7619ca3c10e80fa23c",
-                "reference": "54c35afd5c3cf53f756aed7619ca3c10e80fa23c",
+                "url": "https://api.github.com/repos/davidhirtz/yii2-skeleton/zipball/74253476f5551543e3a0a6819794ff2e3d93ff6e",
+                "reference": "74253476f5551543e3a0a6819794ff2e3d93ff6e",
                 "shasum": ""
             },
             "require": {
@@ -231,9 +231,9 @@
             "homepage": "https://www.github.com/davidhirtz/yii2-skeleton",
             "support": {
                 "issues": "https://github.com/davidhirtz/yii2-skeleton/issues",
-                "source": "https://github.com/davidhirtz/yii2-skeleton/tree/2.6.1"
+                "source": "https://github.com/davidhirtz/yii2-skeleton/tree/2.6.2"
             },
-            "time": "2025-10-20T08:28:45+00:00"
+            "time": "2025-10-20T15:59:12+00:00"
         },
         {
             "name": "davidhirtz/yii2-timeago",
