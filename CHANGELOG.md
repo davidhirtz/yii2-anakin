@@ -1,3 +1,7 @@
+## 2.2.1 (Oct 21, 2025)
+
+- Fixed static analysis issue
+
 ## 2.2.0 (Oct 20, 2025)
 
 - Requires PHP 8.3+
