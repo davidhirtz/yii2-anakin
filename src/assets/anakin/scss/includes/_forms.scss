@@ -16,6 +16,11 @@
   }
 }
 
+.form-control[type=color] {
+  width: 22px;
+}
+
+
 .col-form-label {
   @extend %bebas;
 }

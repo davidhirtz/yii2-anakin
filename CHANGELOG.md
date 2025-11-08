@@ -1,3 +1,7 @@
+## 2.2.2 (Nov 8, 2025)
+
+- Added `HexColorInputWidget` and enhanced display for optional color fields
+
 ## 2.2.1 (Oct 21, 2025)
 
 - Fixed static analysis issue

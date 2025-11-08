@@ -16,8 +16,8 @@ modules:
       entryUrl: "https://www.example.com:443/index.php"
 namespace: davidhirtz\yii2\anakin\tests
 paths:
-  tests: tests
-  output: tests/_output
   data: tests/support/data
+  output: tests/_output
   support: tests/support
+  tests: tests
 support_namespace: support
