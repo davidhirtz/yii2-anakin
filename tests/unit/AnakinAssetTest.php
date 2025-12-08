@@ -6,9 +6,9 @@ namespace Hirtz\Anakin\tests\unit;
 
 use Codeception\Test\Unit;
 use Hirtz\Anakin\assets\AnakinAsset;
-use Hirtz\Skeleton\assets\AdminAsset;
-use Hirtz\Skeleton\codeception\traits\AssetDirectoryTrait;
-use Hirtz\Skeleton\helpers\FileHelper;
+use Hirtz\Skeleton\Assets\AdminAsset;
+use Hirtz\Skeleton\Codeception\traits\AssetDirectoryTrait;
+use Hirtz\Skeleton\Helpers\FileHelper;
 use Yii;
 
 class AnakinAssetTest extends Unit

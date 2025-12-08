@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Hirtz\Anakin;
 
 use Hirtz\Anakin\assets\AnakinAsset;
-use Hirtz\Skeleton\assets\AdminAsset;
-use Hirtz\Skeleton\assets\TinyMceSkinAssetBundle;
-use Hirtz\Skeleton\modules\admin\Module;
-use Hirtz\Skeleton\web\Application;
-use Hirtz\Skeleton\widgets\forms\TinyMceEditor;
+use Hirtz\Skeleton\Assets\AdminAssetBundle;
+use Hirtz\Skeleton\Assets\TinyMceSkinAssetBundle;
+use Hirtz\Skeleton\Modules\Admin\Module;
+use Hirtz\Skeleton\Web\Application;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\Event;
@@ -37,7 +36,7 @@ class Bootstrap implements BootstrapInterface
                     TinyMceSkinAssetBundle::class => [
                         'sourcePath' => '@anakin/assets/tinymce/skins/',
                     ],
-                    AdminAsset::class => [
+                    AdminAssetBundle::class => [
                         'css' => [], // Remove admin CSS, the Anakin theme will register its own CSS
                         'faviconOptions' => [
                             'href' => '/images/favicons/favicon-32x32.png',
@@ -51,7 +50,7 @@ class Bootstrap implements BootstrapInterface
                 'translations' => [
                     'anakin' => [
                         'class' => PhpMessageSource::class,
-                        'basePath' => '@anakin/messages',
+                        'basePath' => '@anakin/../messages',
                     ],
                 ],
             ],
@@ -64,10 +63,11 @@ class Bootstrap implements BootstrapInterface
             ]
         ]);
 
-        Event::on(TinyMceEditor::class, TinyMceEditor::EVENT_INIT, function ($event) {
-            $asset = AnakinAsset::register(Yii::$app->getView());
-            $event->sender->clientOptions['content_css'] ??= "$asset->baseUrl/css/tinymce.min.css";
-        });
+        // Todo
+        //        Event::on(TinyMceEditor::class, TinyMceEditor::EVENT_INIT, function ($event) {
+        //            $asset = AnakinAsset::register(Yii::$app->getView());
+        //            $event->sender->clientOptions['content_css'] ??= "$asset->baseUrl/css/tinymce.min.css";
+        //        });
 
         Event::on(View::class, View::EVENT_BEGIN_PAGE, function () {
             // @phpstan-ignore-next-line the controller might not be available during an exception in request handling

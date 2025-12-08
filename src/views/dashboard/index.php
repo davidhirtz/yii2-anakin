@@ -9,9 +9,9 @@ declare(strict_types=1);
  */
 
 use Hirtz\Anakin\assets\AnakinAsset;
-use Hirtz\Skeleton\modules\admin\controllers\DashboardController;
-use Hirtz\Skeleton\web\View;
-use Hirtz\Skeleton\widgets\fontawesome\Nav;
+use Hirtz\Skeleton\Modules\Admin\Controllers\DashboardController;
+use Hirtz\Skeleton\Web\View;
+use Hirtz\Skeleton\Widgets\Fontawesome\Nav;
 
 $this->setTitle(Yii::t('skeleton', 'Admin'));
 

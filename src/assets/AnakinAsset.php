@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Hirtz\Anakin\assets;
 
-use Hirtz\Skeleton\assets\AdminAsset;
+use Hirtz\Skeleton\Assets\AdminAsset;
 use Yii;
 use yii\web\AssetBundle;
 

@@ -6,8 +6,8 @@ namespace Hirtz\Anakin\tests\unit;
 
 use Codeception\Test\Unit;
 use Hirtz\Anakin\assets\AnakinAsset;
-use Hirtz\Skeleton\codeception\traits\AssetDirectoryTrait;
-use Hirtz\Skeleton\widgets\forms\TinyMceEditor;
+use Hirtz\Skeleton\Codeception\traits\AssetDirectoryTrait;
+use Hirtz\Skeleton\Widgets\Forms\TinyMceEditor;
 use Yii;
 
 class TinyMceEditorTest extends Unit
