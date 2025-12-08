@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin;
+namespace Hirtz\Anakin;
 
-use davidhirtz\yii2\anakin\assets\AnakinAsset;
-use davidhirtz\yii2\skeleton\assets\AdminAsset;
-use davidhirtz\yii2\skeleton\assets\TinyMceSkinAssetBundle;
-use davidhirtz\yii2\skeleton\modules\admin\Module;
-use davidhirtz\yii2\skeleton\web\Application;
-use davidhirtz\yii2\skeleton\widgets\forms\TinyMceEditor;
+use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Skeleton\assets\AdminAsset;
+use Hirtz\Skeleton\assets\TinyMceSkinAssetBundle;
+use Hirtz\Skeleton\modules\admin\Module;
+use Hirtz\Skeleton\web\Application;
+use Hirtz\Skeleton\widgets\forms\TinyMceEditor;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\Event;

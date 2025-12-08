@@ -6,12 +6,12 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin\tests\functional;
+namespace Hirtz\Anakin\tests\functional;
 
-use davidhirtz\yii2\anakin\tests\support\FunctionalTester;
-use davidhirtz\yii2\skeleton\codeception\fixtures\UserFixtureTrait;
-use davidhirtz\yii2\skeleton\codeception\functional\BaseCest;
-use davidhirtz\yii2\skeleton\models\User;
+use Hirtz\Anakin\tests\support\FunctionalTester;
+use Hirtz\Skeleton\codeception\fixtures\UserFixtureTrait;
+use Hirtz\Skeleton\codeception\functional\BaseCest;
+use Hirtz\Skeleton\models\User;
 use Yii;
 
 class AdminCest extends BaseCest

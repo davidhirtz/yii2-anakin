@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin\assets;
+namespace Hirtz\Anakin\assets;
 
-use davidhirtz\yii2\skeleton\assets\AdminAsset;
+use Hirtz\Skeleton\assets\AdminAsset;
 use Yii;
 use yii\web\AssetBundle;
 

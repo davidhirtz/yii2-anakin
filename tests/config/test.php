@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use davidhirtz\yii2\anakin\Bootstrap;
+use Hirtz\Anakin\Bootstrap;
 
 return [
     'aliases' => [

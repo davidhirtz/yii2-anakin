@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @var string $content
  */
 
-use davidhirtz\yii2\anakin\assets\AnakinMailAsset;
+use Hirtz\Anakin\assets\AnakinMailAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 

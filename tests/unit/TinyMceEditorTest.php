@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin\tests\unit;
+namespace Hirtz\Anakin\tests\unit;
 
 use Codeception\Test\Unit;
-use davidhirtz\yii2\anakin\assets\AnakinAsset;
-use davidhirtz\yii2\skeleton\codeception\traits\AssetDirectoryTrait;
-use davidhirtz\yii2\skeleton\widgets\forms\TinyMceEditor;
+use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Skeleton\codeception\traits\AssetDirectoryTrait;
+use Hirtz\Skeleton\widgets\forms\TinyMceEditor;
 use Yii;
 
 class TinyMceEditorTest extends Unit

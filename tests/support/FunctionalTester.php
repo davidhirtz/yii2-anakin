@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin\tests\support;
+namespace Hirtz\Anakin\tests\support;
 
 /**
  * Inherited Methods

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin\assets;
+namespace Hirtz\Anakin\assets;
 
 class AnakinMailAsset extends AnakinAsset
 {

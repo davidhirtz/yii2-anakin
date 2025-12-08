@@ -8,10 +8,10 @@ declare(strict_types=1);
  * @var AnakinAsset $bundle
  */
 
-use davidhirtz\yii2\anakin\assets\AnakinAsset;
-use davidhirtz\yii2\skeleton\modules\admin\controllers\DashboardController;
-use davidhirtz\yii2\skeleton\web\View;
-use davidhirtz\yii2\skeleton\widgets\fontawesome\Nav;
+use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Skeleton\modules\admin\controllers\DashboardController;
+use Hirtz\Skeleton\web\View;
+use Hirtz\Skeleton\widgets\fontawesome\Nav;
 
 $this->setTitle(Yii::t('skeleton', 'Admin'));
 

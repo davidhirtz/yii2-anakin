@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace davidhirtz\yii2\anakin\tests\unit;
+namespace Hirtz\Anakin\tests\unit;
 
 use Codeception\Test\Unit;
-use davidhirtz\yii2\anakin\assets\AnakinAsset;
-use davidhirtz\yii2\skeleton\assets\AdminAsset;
-use davidhirtz\yii2\skeleton\codeception\traits\AssetDirectoryTrait;
-use davidhirtz\yii2\skeleton\helpers\FileHelper;
+use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Skeleton\assets\AdminAsset;
+use Hirtz\Skeleton\codeception\traits\AssetDirectoryTrait;
+use Hirtz\Skeleton\helpers\FileHelper;
 use Yii;
 
 class AnakinAssetTest extends Unit
