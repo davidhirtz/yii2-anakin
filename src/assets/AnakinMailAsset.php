@@ -21,6 +21,7 @@ class AnakinMailAsset extends AnakinAsset
     /**
      * Removes all JavaScript and CSS files, we only need the asset path for the published font.
      */
+    #[\Override]
     public function init(): void
     {
         $this->css = $this->depends = $this->js = [];
