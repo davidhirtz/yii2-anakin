@@ -7,7 +7,7 @@ namespace Hirtz\Anakin\tests\unit;
 use Codeception\Test\Unit;
 use Hirtz\Anakin\assets\AnakinAsset;
 use Hirtz\Skeleton\Assets\AdminAsset;
-use Hirtz\Skeleton\Codeception\traits\AssetDirectoryTrait;
+use Hirtz\Skeleton\Codeception\Traits\AssetDirectoryTrait;
 use Hirtz\Skeleton\Helpers\FileHelper;
 use Yii;
 
