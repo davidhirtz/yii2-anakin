@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Hirtz\Anakin;
 
-use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Anakin\assets\AnakinAssetBundle;
 use Hirtz\Skeleton\Assets\AdminAssetBundle;
 use Hirtz\Skeleton\Assets\TinyMceSkinAssetBundle;
 use Hirtz\Skeleton\Modules\Admin\Module;

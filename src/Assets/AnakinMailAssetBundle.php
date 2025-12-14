@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Hirtz\Anakin\assets;
+namespace Hirtz\Anakin\Assets;
 
-class AnakinMailAsset extends AnakinAsset
+use Override;
+
+class AnakinMailAssetBundle extends AnakinAssetBundle
 {
-    public const DEFAULT_LOGO_URL = '/images/mail/logo.svg';
+    public const string DEFAULT_LOGO_URL = '/images/mail/logo.svg';
 
     /**
      * @var bool whether the Anakin logo should be displayed in the mail footer
@@ -21,10 +23,13 @@ class AnakinMailAsset extends AnakinAsset
     /**
      * Removes all JavaScript and CSS files, we only need the asset path for the published font.
      */
-    #[\Override]
+    #[Override]
     public function init(): void
     {
-        $this->css = $this->depends = $this->js = [];
+        $this->css = [];
+        $this->depends = [];
+        $this->js = [];
+
         parent::init();
     }
 }

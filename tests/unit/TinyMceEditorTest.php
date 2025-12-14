@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hirtz\Anakin\tests\unit;
 
 use Codeception\Test\Unit;
-use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Anakin\assets\AnakinAssetBundle;
 use Hirtz\Skeleton\Codeception\Traits\AssetDirectoryTrait;
 use Hirtz\Skeleton\Widgets\Forms\TinyMceEditor;
 use Yii;
@@ -26,7 +26,7 @@ class TinyMceEditorTest extends Unit
 
     public function testEditorConfig(): void
     {
-        $asset = AnakinAsset::register(Yii::$app->getView());
+        $asset = AnakinAssetBundle::register(Yii::$app->getView());
 
         $editor = Yii::$container->get(TinyMceEditor::class, [], [
             'name' => 'test',
