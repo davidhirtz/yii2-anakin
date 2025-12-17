@@ -5,18 +5,18 @@ declare(strict_types=1);
  * @see DashboardController::actionIndex()
  * @var View $this
  * @var array $panels
- * @var AnakinAsset $bundle
+ * @var AnakinAssetBundle $bundle
  */
 
-use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Anakin\assets\AnakinAssetBundle;
 use Hirtz\Skeleton\Modules\Admin\Controllers\DashboardController;
 use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Widgets\Fontawesome\Nav;
 
 $this->setTitle(Yii::t('skeleton', 'Admin'));
 
-/** @var AnakinAsset $bundle */
-$bundle = $this->getAssetManager()->getBundle(AnakinAsset::class);
+/** @var AnakinAssetBundle $bundle */
+$bundle = $this->getAssetManager()->getBundle(AnakinAssetBundle::class);
 $logoUrl = $bundle->getLogoUrl();
 
 $this->registerJs('$("body").addClass("home");');

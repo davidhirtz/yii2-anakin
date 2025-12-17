@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hirtz\Anakin\tests\unit;
 
 use Codeception\Test\Unit;
-use Hirtz\Anakin\assets\AnakinAsset;
+use Hirtz\Anakin\assets\AnakinAssetBundle;
 use Hirtz\Skeleton\Assets\AdminAsset;
 use Hirtz\Skeleton\Codeception\Traits\AssetDirectoryTrait;
 use Hirtz\Skeleton\Helpers\FileHelper;
@@ -17,7 +17,7 @@ class AnakinAssetTest extends Unit
 
     public function testDefaultLogoUrl(): void
     {
-        $asset = new AnakinAsset();
+        $asset = new AnakinAssetBundle();
         $this->assertFalse($asset->getLogoUrl());
 
         $webroot = Yii::getAlias('@runtime/tests');
@@ -30,7 +30,7 @@ class AnakinAssetTest extends Unit
 
         Yii::setAlias('@webroot', $webroot);
 
-        $asset = new AnakinAsset();
+        $asset = new AnakinAssetBundle();
         $this->assertEquals($asset::DEFAULT_LOGO_URL, $asset->getLogoUrl());
 
         FileHelper::removeDirectory($webroot);
@@ -38,7 +38,7 @@ class AnakinAssetTest extends Unit
 
     public function testSetLogoUrl(): void
     {
-        $asset = new AnakinAsset();
+        $asset = new AnakinAssetBundle();
         $asset->setLogoUrl('/images/admin/logo.svg');
         $this->assertEquals('/images/admin/logo.svg', $asset->getLogoUrl());
     }
@@ -48,10 +48,10 @@ class AnakinAssetTest extends Unit
         $this->createAssetDirectory();
 
         $view = Yii::$app->getView();
-        AnakinAsset::register($view);
+        AnakinAssetBundle::register($view);
 
         $this->assertEmpty($view->assetBundles[AdminAsset::class]->css);
-        $this->assertContains('css/admin.min.css', $view->assetBundles[AnakinAsset::class]->css);
+        $this->assertContains('css/admin.min.css', $view->assetBundles[AnakinAssetBundle::class]->css);
 
         $this->removeAssetDirectory();
     }

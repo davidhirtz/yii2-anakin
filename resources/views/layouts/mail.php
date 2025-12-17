@@ -8,11 +8,11 @@ declare(strict_types=1);
  * @var string $content
  */
 
-use Hirtz\Anakin\assets\AnakinMailAsset;
+use Hirtz\Anakin\assets\AnakinMailAssetBundleBundle;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$asset = AnakinMailAsset::register($this);
+$asset = AnakinMailAssetBundleBundle::register($this);
 $baseUrl = Url::to($asset->baseUrl, true);
 $logo = $asset->getLogoUrl();
 ?>

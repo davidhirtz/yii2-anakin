@@ -2,22 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Hirtz\Anakin\assets;
+namespace Hirtz\Anakin\Assets;
 
-use Hirtz\Skeleton\Assets\AdminAsset;
+use Hirtz\Skeleton\Assets\AdminAssetBundle;
 use Yii;
-use yii\web\AssetBundle;
 
 /**
  * AnakinAsset is the asset bundle for the Anakin admin theme.
  */
-class AnakinAsset extends AssetBundle
+class AnakinAssetBundle extends AdminAssetBundle
 {
     public const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
     public $css = ['css/admin.min.css'];
-    public $depends = [AdminAsset::class];
-    public $sourcePath = '@anakin/assets/anakin';
+    public $depends = [AdminAssetBundle::class];
+    public $sourcePath = '@anakin/../resources/assets/anakin';
 
     public $publishOptions = [
         'except' => [
