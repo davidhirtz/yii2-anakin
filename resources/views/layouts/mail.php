@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 use Hirtz\Anakin\assets\AnakinMailAssetBundleBundle;
 use yii\helpers\Html;
-use yii\helpers\Url;
+use Hirtz\Skeleton\Helpers\Url;;
 
 $asset = AnakinMailAssetBundleBundle::register($this);
 $baseUrl = Url::to($asset->baseUrl, true);
