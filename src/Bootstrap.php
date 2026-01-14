@@ -48,14 +48,6 @@ class Bootstrap implements BootstrapInterface
                     ],
                 ],
             ],
-            'i18n' => [
-                'translations' => [
-                    'anakin' => [
-                        'class' => PhpMessageSource::class,
-                        'basePath' => '@anakin/../messages',
-                    ],
-                ],
-            ],
             'view' => [
                 'theme' => [
                     'pathMap' => [
