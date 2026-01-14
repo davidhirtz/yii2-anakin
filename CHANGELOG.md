@@ -1,3 +1,20 @@
+## 2.2.2 (Nov 8, 2025)
+
+- Added `HexColorInputWidget` and enhanced display for optional color fields
+
+## 2.2.1 (Oct 21, 2025)
+
+- Fixed static analysis issue
+
+## 2.2.0 (Oct 20, 2025)
+
+- Requires PHP 8.3+
+- Added Russian language support
+
+## 2.1.9 (Jan 24, 2024)
+
+- Changed `Bootstrap` I18N configuration
+
 ## 2.1.8 (Nov 30, 2024)
 
 - Forced strict types in all PHP files

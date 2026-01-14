@@ -25,6 +25,11 @@ class Bootstrap implements BootstrapInterface
         Yii::setAlias('@anakin', __DIR__);
         Yii::setAlias('@skeleton/mail/layouts/html', '@anakin/views/layouts/mail');
 
+        $app->getI18n()->translations['anakin'] ??= [
+            'class' => PhpMessageSource::class,
+            'basePath' => '@anakin/messages',
+        ];
+
         Yii::$app->params['email'] ??= 'hello@anakin.co';
 
         Yii::$app->extendComponents([
