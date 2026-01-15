@@ -7,45 +7,24 @@ import {sassPlugin} from 'esbuild-sass-plugin'
 const isWatch = process.argv.slice(2).includes('--watch');
 let cssStartTime;
 
-const watchPlugin = {
-    name: 'watch-plugin',
-    setup(build) {
-        build.onStart(() => {
-            cssStartTime = Date.now();
-        });
-
-        build.onEnd((result) => {
-            if (result.errors.length) {
-                console.log(result.errors);
-            }
-
-            console.log(`Compiled styles with esbuild (${esbuild.version}) in ${Date.now() - cssStartTime}ms`);
-        });
-    }
-};
-
-let context = await esbuild.context({
+const context = await esbuild.context({
     entryPoints: [
-        {
-            in: 'src/assets/anakin/scss/admin.scss',
-            out: 'src/assets/anakin/css/admin.min'
-        },
-        {
-            in: 'src/assets/anakin/scss/tinymce.scss',
-            out: 'src/assets/anakin/css/tinymce.min'
-        },
+        'resources/assets/src/css/tinymce/*',
+        'resources/assets/src/css/*',
     ],
     minify: true,
-    outdir: './',
-    plugins: [watchPlugin, sassPlugin({
-        async transform(source) {
-            const {css} = await postcss([autoprefixer]).process(source, {from: undefined});
-            return css;
-        }
-    })],
+    outdir: 'resources/assets/dist/css',
+    plugins: [
+        watchPlugin('styles'),
+        sassPlugin({
+            async transform(source) {
+                const {css} = await postcss([autoprefixer]).process(source, {from: undefined});
+                return css;
+            }
+        })
+    ],
     sourcemap: true,
-    target: 'es5',
-})
+});
 
 if (isWatch) {
     await context.watch();

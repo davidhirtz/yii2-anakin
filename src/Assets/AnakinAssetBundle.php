@@ -16,6 +16,7 @@ class AnakinAssetBundle extends AdminAssetBundle
 
     public $css = ['css/admin.min.css'];
     public $depends = [AdminAssetBundle::class];
+    public $js = [];
     public $sourcePath = '@anakin/../resources/assets/anakin';
 
     public $publishOptions = [

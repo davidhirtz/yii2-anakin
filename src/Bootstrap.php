@@ -36,10 +36,10 @@ class Bootstrap implements BootstrapInterface
             'assetManager' => [
                 'bundles' => [
                     TinyMceAssetBundle::class => [
-                        'sourcePath' => '@anakin/../resources/assets/tinymce/skins/',
+//                        'sourcePath' => '@anakin/../resources/assets/tinymce/skins/',
                     ],
                     AdminAssetBundle::class => [
-                        'css' => [], // Remove admin CSS, the Anakin theme will register its own CSS
+//                        'css' => [], // Remove admin CSS, the Anakin theme will register its own CSS
                         'faviconOptions' => [
                             'href' => '/images/favicons/favicon-32x32.png',
                             'sizes' => '32x32',
@@ -64,9 +64,9 @@ class Bootstrap implements BootstrapInterface
         //        });
 
         Event::on(View::class, View::EVENT_BEGIN_PAGE, function (): void {
-            if (Yii::$app->controller?->module instanceof Module || Yii::$app->controller?->module->module instanceof Module) {
-                AnakinAssetBundle::register(Yii::$app->getView());
-            }
+//            if (Yii::$app->controller?->module instanceof Module || Yii::$app->controller?->module->module instanceof Module) {
+//                AnakinAssetBundle::register(Yii::$app->getView());
+//            }
         });
     }
 }

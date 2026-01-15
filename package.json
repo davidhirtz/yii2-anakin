@@ -1,17 +1,17 @@
 {
-	"private": true,
-	"type": "module",
-	"browserslist": [
-		"defaults"
-	],
-	"scripts": {
-		"build": "node esbuild.js",
-		"dev": "node esbuild.js --watch"
-	},
-	"devDependencies": {
-		"autoprefixer": "^10.4",
-		"bootstrap": "^4.6",
-		"esbuild": "^0.25",
-		"esbuild-sass-plugin": "^3.3"
-	}
+  "private": true,
+  "type": "module",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "build": "node esbuild.js",
+    "dev": "node esbuild.js --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.27",
+    "esbuild-sass-plugin": "^3.3.1",
+    "postcss": "^8.4.49"
+  }
 }
