@@ -20,7 +20,7 @@ $bundle = $this->getAssetManager()->getBundle(AnakinAssetBundle::class);
 $logoUrl = $bundle->getLogoUrl();
 
 $this->registerJs('$("body").addClass("home");');
-$this->registerCss('.breadcrumb{visibility:hidden;}');
+$this->registerCss('.breadcrumbs{visibility:hidden;}');
 
 ?>
 <div class="text-center">
