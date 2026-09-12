@@ -1,16 +1,15 @@
 <?php
+
 declare(strict_types=1);
 
 /**
- * Email layout.
- *
  * @var yii\web\View $this
  * @var string $content
  */
 
-use Hirtz\Anakin\assets\AnakinMailAssetBundleBundle;
+use Hirtz\Anakin\Assets\AnakinMailAssetBundleBundle;
 use yii\helpers\Html;
-use Hirtz\Skeleton\Helpers\Url;;
+use Hirtz\Skeleton\Helpers\Url;
 
 $asset = AnakinMailAssetBundleBundle::register($this);
 $baseUrl = Url::to($asset->baseUrl, true);

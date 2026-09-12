@@ -4,41 +4,32 @@ declare(strict_types=1);
 
 namespace Hirtz\Anakin\Assets;
 
+use Hirtz\Skeleton\Assets\AbstractAssetBundle;
 use Hirtz\Skeleton\Assets\AdminAssetBundle;
 use Yii;
 
-/**
- * AnakinAsset is the asset bundle for the Anakin admin theme.
- */
-class AnakinAssetBundle extends AdminAssetBundle
+class AnakinAssetBundle extends AbstractAssetBundle
 {
-    public const DEFAULT_LOGO_URL = '/images/admin/logo.svg';
+    public const string DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
-    public $css = ['css/admin.min.css'];
+    public $css = ['css/anakin.css'];
     public $depends = [AdminAssetBundle::class];
-    public $js = [];
-    public $sourcePath = '@anakin/../resources/assets/anakin';
+    public $sourcePath = '@anakin/../resources/assets/dist';
 
-    public $publishOptions = [
-        'except' => [
-            'scss/',
-        ],
-    ];
-
-    protected string|null|false $_logoUrl = null;
+    protected string|null|false $logoUrl = null;
 
     public function getLogoUrl(): string|false
     {
-        if ($this->_logoUrl === null) {
+        if ($this->logoUrl === null) {
             $path = Yii::getAlias('@webroot') . static::DEFAULT_LOGO_URL;
-            $this->_logoUrl = file_exists($path) ? static::DEFAULT_LOGO_URL : false;
+            $this->logoUrl = file_exists($path) ? static::DEFAULT_LOGO_URL : false;
         }
 
-        return $this->_logoUrl;
+        return $this->logoUrl;
     }
 
     public function setLogoUrl(string|false|null $logoUrl): void
     {
-        $this->_logoUrl = $logoUrl;
+        $this->logoUrl = $logoUrl;
     }
 }

@@ -1,3 +1,12 @@
+## 3.0.0 (in development)
+
+- `anakin.css` is built with esbuild from `resources/assets/src/css/anakin.scss` via the skeleton's shared
+  `esbuild.config.js` (`npm run build` / `npm run dev`). It is an override layer loaded after the skeleton's
+  `admin.css`, not a rebuilt copy of it as in 2.x
+- `Assets\AnakinAssetBundle::$sourcePath` points at the bundle's own `resources/assets/dist`; it inherited the
+  skeleton's, so `css/anakin.css` was published from the wrong directory
+- Renamed `Assets\AnakinAssetBundle::$_logoUrl` to `$logoUrl`
+
 ## 2.2.2 (Nov 8, 2025)
 
 - Added `HexColorInputWidget` and enhanced display for optional color fields

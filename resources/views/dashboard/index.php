@@ -8,20 +8,18 @@ declare(strict_types=1);
  * @var AnakinAssetBundle $bundle
  */
 
-use Hirtz\Anakin\assets\AnakinAssetBundle;
+use Hirtz\Anakin\Assets\AnakinAssetBundle;
 use Hirtz\Skeleton\Modules\Admin\Controllers\DashboardController;
+use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
 use Hirtz\Skeleton\Web\View;
-use Hirtz\Skeleton\Widgets\Fontawesome\Nav;
+use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 
-$this->setTitle(Yii::t('skeleton', 'Admin'));
 
-/** @var AnakinAssetBundle $bundle */
 $bundle = $this->getAssetManager()->getBundle(AnakinAssetBundle::class);
 $logoUrl = $bundle->getLogoUrl();
 
-$this->registerJs('$("body").addClass("home");');
-$this->registerCss('.breadcrumbs{visibility:hidden;}');
-
+echo DashboardHeader::make();
+echo Dashboard::make();
 ?>
 <div class="text-center">
     <div class="home-wrap">
