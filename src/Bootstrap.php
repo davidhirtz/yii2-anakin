@@ -54,8 +54,8 @@ class Bootstrap implements BootstrapInterface
         ]);
 
         Event::on(Module::class, Module::EVENT_BEFORE_ACTION, function (ActionEvent $event): void {
-//            /** @var Module $module */
-//            $module = $event->sender;
+            /** @var Module $module */
+            $module = $event->sender;
             $view = $event->action->controller->getView();
 
             $view->on($view::EVENT_BEGIN_PAGE, function () use ($module, $view) {
