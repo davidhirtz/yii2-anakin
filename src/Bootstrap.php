@@ -14,6 +14,7 @@ use yii\base\ActionEvent;
 use yii\base\BootstrapInterface;
 use yii\base\Event;
 use yii\i18n\PhpMessageSource;
+use yii\web\View;
 
 class Bootstrap implements BootstrapInterface
 {
@@ -54,11 +55,10 @@ class Bootstrap implements BootstrapInterface
         ]);
 
         Event::on(Module::class, Module::EVENT_BEFORE_ACTION, function (ActionEvent $event): void {
-            /** @var Module $module */
-            $module = $event->sender;
+            /** @var View $view */
             $view = $event->action->controller->getView();
 
-            $view->on($view::EVENT_BEGIN_PAGE, function () use ($module, $view) {
+            $view->on($view::EVENT_BEGIN_PAGE, function () use ($view): void {
                 AnakinAssetBundle::register($view);
             });
         });
