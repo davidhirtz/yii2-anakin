@@ -14,7 +14,6 @@ use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
 use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 
-
 $bundle = $this->getAssetManager()->getBundle(AnakinAssetBundle::class);
 $logoUrl = $bundle->getLogoUrl();
 
