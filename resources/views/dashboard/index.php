@@ -33,14 +33,12 @@ echo Dashboard::make();
         } ?>
         <div class="home-welcome">
             <h1>
-                <?= Yii::t('anakin', 'Hello {name}, good to', [
+                <?= Yii::t('anakin', 'ANAKIN_DASHBOARD_GREETING', [
                     'name' => Yii::$app->getUser()->getIdentity()->getUsername(),
                 ]); ?>
-                <br>
-                <?= Yii::t('anakin', 'have you back!'); ?>
             </h1>
             <p>
-                <?= Yii::t('anakin', 'What do you want <br>to do today?'); ?>
+                <?= Yii::t('anakin', 'ANAKIN_DASHBOARD_QUESTION'); ?>
             </p>
         </div>
     </div>
@@ -61,7 +59,7 @@ echo Dashboard::make();
     'hideOneItem' => false,
     'items' => [
         [
-            'label' => Yii::t('anakin', 'Skype with ANAKIN'),
+            'label' => Yii::t('anakin', 'ANAKIN_DASHBOARD_SKYPE'),
             'url' => 'skype:danozzzz',
             'linkOptions' => [
                 'id' => 'skype',
@@ -73,7 +71,7 @@ echo Dashboard::make();
     ],
 ]); ?>
     <div class="home-footer">
-        <p><?= Yii::t('anakin', 'Need a hand?'); ?></p>
+        <p><?= Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT'); ?></p>
         <p>
             <a href="mailto:hello@anakin.co">hello@anakin.co</a><br>
             Daniel <a href="tel:491707731849">+49 170 773 1849</a>

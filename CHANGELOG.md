@@ -1,5 +1,8 @@
 ## 3.0.0 (in development)
 
+- The dashboard view translates through `ANAKIN_DASHBOARD_*` keys instead of English literals, and the greeting
+  is one key rather than two half-sentences. `messages/config.php` declares `categories`; without it the message
+  command deleted every `anakin.php`, since `sourcePath` never reached `resources/views`
 - `anakin.css` is built with esbuild from `resources/assets/src/css/anakin.scss` via the skeleton's shared
   `esbuild.config.js` (`npm run build` / `npm run dev`). It is an override layer loaded after the skeleton's
   `admin.css`, not a rebuilt copy of it as in 2.x
