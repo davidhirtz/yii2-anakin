@@ -13,6 +13,7 @@ use Yii;
 use yii\base\ActionEvent;
 use yii\base\BootstrapInterface;
 use yii\base\Event;
+use yii\base\Module as BaseModule;
 use yii\i18n\PhpMessageSource;
 use yii\web\View;
 
@@ -54,7 +55,7 @@ class Bootstrap implements BootstrapInterface
             ],
         ]);
 
-        Event::on(Module::class, Module::EVENT_BEFORE_ACTION, function (ActionEvent $event): void {
+        Event::on(Module::class, BaseModule::EVENT_BEFORE_ACTION, function (ActionEvent $event): void {
             /** @var View $view */
             $view = $event->action->controller->getView();
 
