@@ -10,19 +10,19 @@ use Yii;
 
 class AnakinAssetBundle extends AbstractAssetBundle
 {
-    public const string DEFAULT_LOGO_URL = '/images/admin/logo.svg';
+    private const string DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
     public $css = ['css/anakin.css'];
     public $depends = [AdminAssetBundle::class];
     public $sourcePath = '@anakin/../resources/assets/dist';
 
-    protected string|null|false $logoUrl = null;
+    private string|null|false $logoUrl = null;
 
     public function getLogoUrl(): string|false
     {
         if ($this->logoUrl === null) {
-            $path = Yii::getAlias('@webroot') . static::DEFAULT_LOGO_URL;
-            $this->logoUrl = file_exists($path) ? static::DEFAULT_LOGO_URL : false;
+            $path = Yii::getAlias('@webroot') . self::DEFAULT_LOGO_URL;
+            $this->logoUrl = file_exists($path) ? self::DEFAULT_LOGO_URL : false;
         }
 
         return $this->logoUrl;

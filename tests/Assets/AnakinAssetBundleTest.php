@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hirtz\Anakin\Tests\Assets;
 
 use Hirtz\Anakin\Assets\AnakinAssetBundle;
-use Hirtz\Anakin\Assets\AnakinMailAssetBundleBundle;
+use Hirtz\Anakin\Assets\AnakinMailAssetBundle;
 use Hirtz\Skeleton\Helpers\FileHelper;
 use Hirtz\Skeleton\Test\TestCase;
 use Yii;
@@ -41,18 +41,18 @@ class AnakinAssetBundleTest extends TestCase
     public function testTheMailBundleCarriesNoAssets(): void
     {
         $this->createLogo(AnakinAssetBundle::DEFAULT_LOGO_URL);
-        $bundle = $this->createBundle(AnakinMailAssetBundleBundle::class);
+        $bundle = $this->createBundle(AnakinMailAssetBundle::class);
 
         self::assertEquals([], $bundle->css);
         self::assertEquals([], $bundle->js);
         self::assertEquals([], $bundle->depends);
         self::assertFalse($bundle->getLogoUrl());
 
-        $this->createLogo(AnakinMailAssetBundleBundle::DEFAULT_LOGO_URL);
+        $this->createLogo(AnakinMailAssetBundle::DEFAULT_LOGO_URL);
 
         self::assertEquals(
-            AnakinMailAssetBundleBundle::DEFAULT_LOGO_URL,
-            $this->createBundle(AnakinMailAssetBundleBundle::class)->getLogoUrl()
+            AnakinMailAssetBundle::DEFAULT_LOGO_URL,
+            $this->createBundle(AnakinMailAssetBundle::class)->getLogoUrl()
         );
     }
 

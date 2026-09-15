@@ -7,11 +7,10 @@ declare(strict_types=1);
  * @var string $content
  */
 
-use Hirtz\Anakin\Assets\AnakinMailAssetBundleBundle;
+use Hirtz\Anakin\Assets\AnakinMailAssetBundle;
 use yii\helpers\Html;
-use Hirtz\Skeleton\Helpers\Url;
 
-$asset = AnakinMailAssetBundleBundle::register($this);
+$asset = AnakinMailAssetBundle::register($this);
 $logo = $asset->getLogoUrl();
 ?>
 <?php $this->beginPage() ?>
@@ -171,6 +170,8 @@ $logo = $asset->getLogoUrl();
         text-decoration: none;
     }
 
+    <?php if ($logo) {
+        ?>
     .header {
         box-shadow: 0 1px 12px 5px rgba(0, 0, 0, 0.04);
         padding: 40px;
@@ -182,8 +183,10 @@ $logo = $asset->getLogoUrl();
         margin: 0 auto;
         width: <?= $asset->logoWidth; ?>;
     }
-
-
+    <?php
+    }
+?>
+    
     .anakin {
         margin: 65px auto 0;
         width: 70px;
@@ -192,7 +195,9 @@ $logo = $asset->getLogoUrl();
 <?php
 if ($logo) {
     ?>
-    <div class="header"><img src="<?= Url::to($logo, true); ?>" class="logo" alt="<?= Yii::$app->name; ?>"></div>
+    <div class="header">
+        <img src="<?= $logo; ?>" class="logo" alt="<?= Yii::$app->name; ?>">
+    </div>
     <?php
 }
 ?>
