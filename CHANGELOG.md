@@ -1,5 +1,19 @@
 ## 3.0.0 (in development)
 
+- **The admin logo lives here.** `Modules\Admin\Widgets\Navs\AnakinLogo` replaces the skeleton's `AsideLogo`,
+  `NavBarLogo` and `Navs\Traits\LogoTrait`, and `AnakinNavBar` / `AnakinAsideMenu` are bound to the skeleton's
+  `Navs\NavBar` / `Navs\AsideMenu` through the container, so a project names neither. The navbar inlines the SVG
+  path and the aside references it through `AnakinLogo::useHref()`: the navbar renders outside `#wrap` and
+  survives every htmx swap, so the definition the `<use>` needs is always on the page
+- The `anakin` message source was registered under `@anakin/messages` — the bundle's messages are one directory
+  further up — and without `forceTranslation`, so every `ANAKIN_*` key rendered as itself in English
+- **The themed dashboard renders again.** `view.theme.pathMap` named
+  `@skeleton/../resources/views/admin/views/dashboard`, a directory that has never existed, so the override was
+  dead — which is the only reason nobody hit the view behind it, still calling the removed `Nav::widget([...])`
+  API and reading a `$panels` variable the dashboard controller stopped passing when `Widgets\Panels\Dashboard`
+  replaced it. The view now renders the skeleton's `MigrationAlert`, `DirectoryAlert` and `EnvironmentAlert`
+  beside the dashboard panel, as the view it overrides does — a theme that drops them hides the two conditions
+  an admin is meant to act on. Its `home-*` markup is unstyled until `anakin.scss` catches up
 - The dashboard view translates through `ANAKIN_DASHBOARD_*` keys instead of English literals, and the greeting
   is one key rather than two half-sentences. `messages/config.php` declares `categories`; without it the message
   command deleted every `anakin.php`, since `sourcePath` never reached `resources/views`

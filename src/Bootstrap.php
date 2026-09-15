@@ -33,7 +33,8 @@ class Bootstrap implements BootstrapInterface
 
         $app->getI18n()->translations['anakin'] ??= [
             'class' => PhpMessageSource::class,
-            'basePath' => '@anakin/messages',
+            'basePath' => '@anakin/../messages',
+            'forceTranslation' => true,
         ];
 
         $app->params['email'] ??= 'hello@anakin.co';
@@ -53,7 +54,7 @@ class Bootstrap implements BootstrapInterface
             'view' => [
                 'theme' => [
                     'pathMap' => [
-                        '@skeleton/../resources/views/admin/views/dashboard' => '@anakin/../resources/views/dashboard',
+                        '@skeleton/../resources/views/admin/dashboard' => '@anakin/../resources/views/dashboard',
                     ],
                 ],
             ],
