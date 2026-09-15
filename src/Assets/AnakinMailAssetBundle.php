@@ -10,7 +10,7 @@ use yii\base\InvalidConfigException;
 
 class AnakinMailAssetBundle extends AnakinAssetBundle
 {
-    private const string MAIL_LOGO_URL = '/images/mail/logo.svg';
+    final public const string MAIL_LOGO_URL = '/images/mail/logo.svg';
 
     public bool $showAnakinLogo = true;
     public string $logoWidth = '250px';

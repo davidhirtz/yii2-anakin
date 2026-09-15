@@ -10,7 +10,7 @@ use Yii;
 
 class AnakinAssetBundle extends AbstractAssetBundle
 {
-    private const string DEFAULT_LOGO_URL = '/images/admin/logo.svg';
+    final public const string DEFAULT_LOGO_URL = '/images/admin/logo.svg';
 
     public $css = ['css/anakin.css'];
     public $depends = [AdminAssetBundle::class];

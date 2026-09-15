@@ -1,5 +1,9 @@
 ## 3.0.0 (in development)
 
+- `Assets\AnakinAssetBundle::DEFAULT_LOGO_URL` and `Assets\AnakinMailAssetBundle::MAIL_LOGO_URL` are
+  `final public`: a project ships the file itself, so the path it has to put it at is part of the API rather
+  than something to repeat.
+
 - **The admin logo lives here.** `Modules\Admin\Widgets\Navs\AnakinLogo` replaces the skeleton's `AsideLogo`,
   `NavBarLogo` and `Navs\Traits\LogoTrait`, and `AnakinNavBar` / `AnakinAsideMenu` are bound to the skeleton's
   `Navs\NavBar` / `Navs\AsideMenu` through the container, so a project names neither. The navbar inlines the SVG
