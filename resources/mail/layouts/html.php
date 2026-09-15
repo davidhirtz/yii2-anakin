@@ -12,7 +12,6 @@ use yii\helpers\Html;
 use Hirtz\Skeleton\Helpers\Url;
 
 $asset = AnakinMailAssetBundleBundle::register($this);
-$baseUrl = Url::to($asset->baseUrl, true);
 $logo = $asset->getLogoUrl();
 ?>
 <?php $this->beginPage() ?>
@@ -29,24 +28,21 @@ $logo = $asset->getLogoUrl();
 <style>
     @font-face {
         font-family: 'ATC Overlook';
-        src: url(<?= $baseUrl; ?>/fonts/atcoverlook-regular-webfont.woff2) format('woff2'),
-        url(<?= $baseUrl; ?>/fonts/atcoverlook-regular-webfont.woff) format('woff');
+        src: url(https://www.anakin.co/mail/atcoverlook-regular-webfont.woff2) format('woff2');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'ATC Overlook';
-        src: url(<?= $baseUrl; ?>/fonts/atcoverlook-heavy-webfont.woff2) format('woff2'),
-        url(<?= $baseUrl; ?>/fonts/atcoverlook-heavy-webfont.woff) format('woff');
+        src: url(https://www.anakin.co/mail/atcoverlook-heavy-webfont.woff2) format('woff2');
         font-weight: bold;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Bebas Neue';
-        src: url(<?= $baseUrl; ?>/fonts/bebasneue_bold-webfont.woff2) format('woff2'),
-        url(<?= $baseUrl; ?>/fonts/bebasneue_bold-webfont.woff) format('woff');
+        src: url(https://www.anakin.co/mail/bebasneue_bold-webfont.woff2) format('woff2');
         font-weight: bold;
         font-style: normal;
     }
@@ -208,7 +204,7 @@ if ($logo) {
     <?php if ($asset->showAnakinLogo) {
         ?>
         <div class="anakin">
-            <img src="<?= $baseUrl . '/images/ANAKIN.svg'; ?>" alt="Anakin">
+            <img src="https://www.anakin.co/mail/ANAKIN.svg" alt="Anakin">
         </div>
         <?php
     } ?>

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Hirtz\Anakin\Assets;
 
 use Override;
+use Yii;
+use yii\base\InvalidConfigException;
 
 class AnakinMailAssetBundleBundle extends AnakinAssetBundle
 {
@@ -22,5 +24,15 @@ class AnakinMailAssetBundleBundle extends AnakinAssetBundle
         $this->js = [];
 
         parent::init();
+    }
+
+    public function getHostInfo(): ?string
+    {
+        try {
+            return Yii::$app->getUrlManager()->getHostInfo();
+        } catch (InvalidConfigException) {
+        }
+
+        return null;
     }
 }
