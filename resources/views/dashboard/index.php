@@ -12,6 +12,7 @@ use Hirtz\Skeleton\Modules\Admin\Widgets\DirectoryAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\EnvironmentAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\MigrationAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
+use Hirtz\Skeleton\Web\Application;
 use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Widgets\Navs\Nav;
 use Hirtz\Skeleton\Widgets\Navs\NavItem;
@@ -39,7 +40,7 @@ echo Dashboard::make();
         <div class="home-welcome">
             <h1>
                 <?= Yii::t('anakin', 'ANAKIN_DASHBOARD_GREETING', [
-                    'name' => Yii::$app->getUser()->getIdentity()?->getUsername(),
+                    'name' => Application::current()->getUser()->getIdentity()?->getUsername(),
                 ]); ?>
             </h1>
             <p>
