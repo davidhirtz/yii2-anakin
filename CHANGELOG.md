@@ -1,3 +1,7 @@
+## 2.2.3 (Sep 15, 2026)
+
+- Updated dependencies
+
 ## 2.2.2 (Nov 8, 2025)
 
 - Added `HexColorInputWidget` and enhanced display for optional color fields

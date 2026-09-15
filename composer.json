@@ -22,7 +22,6 @@
     "codeception/module-yii2": "*",
     "codeception/module-phpbrowser": "*",
     "codeception/module-asserts": "*",
-    "phpro/grumphp-shim": "^2.4",
     "rector/rector": "^2.2",
     "symplify/easy-coding-standard": "^12.6",
     "yiisoft/yii2-debug": "^2.1",
@@ -40,8 +39,10 @@
   },
   "config": {
     "allow-plugins": {
-      "yiisoft/yii2-composer": true,
-      "phpro/grumphp-shim": true
+      "yiisoft/yii2-composer": true
+    },
+    "platform": {
+      "php": "8.3"
     }
   },
   "extra": {
