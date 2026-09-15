@@ -1,0 +1,39 @@
+@use "../../../../../yii2-skeleton/resources/assets/src/css/shared/breakpoints" as *;
+
+.anakin-logo {
+  min-height: 2.5rem;
+  place-content: center;
+}
+
+.anakin-logo-img {
+  height: 1rem;
+  aspect-ratio: 888 / 137;
+}
+
+.anakin-navbar {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    background-color: transparent;
+    justify-content: space-between;
+  }
+
+  .has-aside & .anakin-logo {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    .anakin-logo {
+      display: none;
+    }
+  }
+}
+
+.anakin-aside {
+  .anakin-logo {
+    padding-inline: 2rem;
+  }
+
+  .aside-main {
+    padding-top: 1rem;
+  }
+}
