@@ -7,7 +7,6 @@ namespace Hirtz\Anakin\Tests\Modules\Admin\Widgets\Navs;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\NavBar;
 use Hirtz\Skeleton\Test\TestCase;
 use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
-use Yii;
 
 class AnakinNavBarTest extends TestCase
 {
@@ -15,7 +14,7 @@ class AnakinNavBarTest extends TestCase
 
     public function testTheNavbarCarriesTheLogoAndTheSkeletonItems(): void
     {
-        Yii::$app->getUser()->setIdentity($this->getUserFromFixture('admin'));
+        $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
 
         $html = NavBar::make()->render();
 
@@ -30,7 +29,7 @@ class AnakinNavBarTest extends TestCase
      */
     public function testTheNavbarCarriesNoGeneratedId(): void
     {
-        Yii::$app->getUser()->setIdentity($this->getUserFromFixture('admin'));
+        $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
 
         self::assertDoesNotMatchRegularExpression('/id="i\d+"/', NavBar::make()->render());
     }

@@ -7,7 +7,6 @@ namespace Hirtz\Anakin\Tests\Functional;
 use Hirtz\Skeleton\Test\TestCase;
 use Hirtz\Skeleton\Test\Traits\FunctionalTestTrait;
 use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
-use Yii;
 
 class AdminThemeTest extends TestCase
 {
@@ -50,7 +49,7 @@ class AdminThemeTest extends TestCase
         $user = $this->getUserFromFixture('admin');
         $this->assignAdminRole($user->id);
 
-        Yii::$app->getUser()->login($user);
+        $this->getWebUser()->login($user);
         $this->open('https://www.test.localhost/admin');
 
         self::assertResponseIsSuccessful();

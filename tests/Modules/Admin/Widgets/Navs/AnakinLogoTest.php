@@ -7,7 +7,6 @@ namespace Hirtz\Anakin\Tests\Modules\Admin\Widgets\Navs;
 use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinLogo;
 use Hirtz\Skeleton\Test\TestCase;
 use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
-use Yii;
 
 class AnakinLogoTest extends TestCase
 {
@@ -15,7 +14,7 @@ class AnakinLogoTest extends TestCase
 
     public function testTheLogoLinksToTheDashboard(): void
     {
-        Yii::$app->getUser()->setIdentity($this->getUserFromFixture('admin'));
+        $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
 
         self::assertStringContainsString('href="/admin/dashboard/index"', AnakinLogo::make()->render());
     }
