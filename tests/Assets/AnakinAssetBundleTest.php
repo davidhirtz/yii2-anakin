@@ -12,6 +12,9 @@ use Yii;
 
 class AnakinAssetBundleTest extends TestCase
 {
+    private const string LOGO_URL = '/images/admin/logo.svg';
+    private const string MAIL_LOGO_URL = '/images/mail/logo.svg';
+
     /**
      * The logo is a project asset, so the dashboard has to cope with an installation that ships none.
      */
@@ -22,9 +25,9 @@ class AnakinAssetBundleTest extends TestCase
 
     public function testTheLogoUrlIsTheDefaultPathOnceTheFileExists(): void
     {
-        $this->createLogo(AnakinAssetBundle::DEFAULT_LOGO_URL);
+        $this->createLogo(self::LOGO_URL);
 
-        self::assertEquals(AnakinAssetBundle::DEFAULT_LOGO_URL, $this->createBundle()->getLogoUrl());
+        self::assertEquals(self::LOGO_URL, $this->createBundle()->getLogoUrl());
     }
 
     public function testTheLogoUrlCanBeConfigured(): void
@@ -36,22 +39,39 @@ class AnakinAssetBundleTest extends TestCase
     }
 
     /**
-     * The mail bundle ships no stylesheet of its own and looks for the logo beside the mail images.
+     * A mail client loads no stylesheet, so the bundle ships none.
      */
     public function testTheMailBundleCarriesNoAssets(): void
     {
-        $this->createLogo(AnakinAssetBundle::DEFAULT_LOGO_URL);
         $bundle = $this->createBundle(AnakinMailAssetBundle::class);
 
         self::assertEquals([], $bundle->css);
         self::assertEquals([], $bundle->js);
         self::assertEquals([], $bundle->depends);
         self::assertFalse($bundle->getLogoUrl());
+    }
 
-        $this->createLogo(AnakinMailAssetBundle::DEFAULT_LOGO_URL);
+    /**
+     * A mail is read away from the site, so its logo is absolute — and it falls back to the admin one where the
+     * mail images ship none of their own.
+     */
+    public function testTheMailLogoUrlFallsBackToTheAdminLogo(): void
+    {
+        $this->createLogo(self::LOGO_URL);
 
         self::assertEquals(
-            AnakinMailAssetBundle::DEFAULT_LOGO_URL,
+            $this->getWebRequest()->getHostInfo() . self::LOGO_URL,
+            $this->createBundle(AnakinMailAssetBundle::class)->getLogoUrl()
+        );
+    }
+
+    public function testTheMailLogoUrlPrefersTheMailLogo(): void
+    {
+        $this->createLogo(self::LOGO_URL);
+        $this->createLogo(self::MAIL_LOGO_URL);
+
+        self::assertEquals(
+            $this->getWebRequest()->getHostInfo() . self::MAIL_LOGO_URL,
             $this->createBundle(AnakinMailAssetBundle::class)->getLogoUrl()
         );
     }
