@@ -23,7 +23,7 @@
 
   @include media-breakpoint-up(md) {
     .anakin-logo {
-      display: none;
+      visibility: hidden;
     }
   }
 }
