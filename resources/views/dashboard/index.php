@@ -12,6 +12,7 @@ use Hirtz\Skeleton\Modules\Admin\Widgets\DirectoryAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\EnvironmentAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\MigrationAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
+use Hirtz\Skeleton\Modules\Admin\Widgets\SentryAlert;
 use Hirtz\Skeleton\Web\Application;
 use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Widgets\Navs\Nav;
@@ -28,6 +29,7 @@ echo DashboardHeader::make();
 echo MigrationAlert::make();
 echo DirectoryAlert::make();
 echo EnvironmentAlert::make();
+echo SentryAlert::make();
 echo Dashboard::make();
 ?>
 <div class="text-center">
