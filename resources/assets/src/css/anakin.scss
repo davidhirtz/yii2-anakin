@@ -18,12 +18,12 @@
   }
 
   .has-aside & .anakin-logo {
-    display: none;
+    visibility: hidden;
   }
 
   @include media-breakpoint-up(md) {
     .anakin-logo {
-      visibility: hidden;
+      display: none;
     }
   }
 }
