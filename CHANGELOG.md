@@ -2,7 +2,8 @@
 
 - **The aside logo moved into the skeleton's `.aside-header`**, which it now shares with the pin button that
   collapses the aside to its icons: `AnakinAsideMenu` overrides `getHeader()` instead of `renderContent()`, and
-  carries the `anakin-aside` class on its `$attributes` default. A guest gets no aside at all now that the
+  carries the `anakin-aside` class on its `$attributes` default. The logo is the one thing of the theme's that
+  the collapsed rail leaves uncovered, so it fades with the skeleton's `--aside-open`. A guest gets no aside at all now that the
   skeleton leaves an empty one out of the document rather than hiding it — the logo used to keep it rendering
   on the login page.
 
