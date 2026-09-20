@@ -29,11 +29,25 @@
 }
 
 .anakin-aside {
-  .anakin-logo {
+  .aside-header {
+    // The logo takes the row and pushes the pin button to its end.
+    justify-content: space-between;
     padding-inline: 2rem;
+  }
+
+  .anakin-logo {
+    min-width: 0;
+    overflow: hidden;
   }
 
   .aside-main {
     padding-top: 1rem;
+  }
+}
+
+// The wordmark does not fit the collapsed rail, where the skeleton's own rule has already centred the header.
+@include media-breakpoint-up(md) {
+  [data-aside-collapsed] .anakin-aside:not(:hover, :focus-within) .anakin-logo {
+    display: none;
   }
 }

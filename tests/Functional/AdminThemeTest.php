@@ -30,7 +30,11 @@ class AdminThemeTest extends TestCase
      */
     public function testTheLogoIsDefinedInTheNavbarAndReferencedInTheAside(): void
     {
-        $this->open(self::URL);
+        $user = $this->getUserFromFixture('admin');
+        $this->assignAdminRole($user->id);
+
+        $this->getWebUser()->login($user);
+        $this->open('https://www.test.localhost/admin');
 
         $navbar = self::$crawler->filter('.anakin-navbar')->html();
         $aside = self::$crawler->filter('.anakin-aside')->html();
@@ -38,6 +42,18 @@ class AdminThemeTest extends TestCase
         self::assertStringContainsString('<path id="anakin"', $navbar);
         self::assertStringContainsString('href="#anakin"', $aside);
         self::assertStringNotContainsString('<path id="anakin"', $aside);
+    }
+
+    /**
+     * The aside holds nothing a guest may reach, so it is left out of the document rather than hidden — the
+     * theme's logo would otherwise keep it rendering on the login page.
+     */
+    public function testTheAsideIsLeftOutOfTheLoginPage(): void
+    {
+        $this->open(self::URL);
+
+        self::assertResponseIsSuccessful();
+        self::assertSelectorNotExists('.anakin-aside');
     }
 
     /**

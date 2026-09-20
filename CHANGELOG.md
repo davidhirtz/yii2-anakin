@@ -1,5 +1,11 @@
 ## 3.0.0 (in development)
 
+- **The aside logo moved into the skeleton's `.aside-header`**, which it now shares with the pin button that
+  collapses the aside to its icons: `AnakinAsideMenu` overrides `getHeader()` instead of `renderContent()`, and
+  carries the `anakin-aside` class on its `$attributes` default. A guest gets no aside at all now that the
+  skeleton leaves an empty one out of the document rather than hiding it — the logo used to keep it rendering
+  on the login page.
+
 - `Assets\AnakinAssetBundle::DEFAULT_LOGO_URL` and `Assets\AnakinMailAssetBundle::MAIL_LOGO_URL` are
   `final public`: a project ships the file itself, so the path it has to put it at is part of the API rather
   than something to repeat.

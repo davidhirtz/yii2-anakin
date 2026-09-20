@@ -4,20 +4,31 @@ declare(strict_types=1);
 
 namespace Hirtz\Anakin\Modules\Admin\Widgets\Navs;
 
-use Hirtz\Skeleton\Html\Aside;
+use Hirtz\Skeleton\Html\Div;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\AsideMenu;
 use Override;
 use Stringable;
 
 class AnakinAsideMenu extends AsideMenu
 {
+    /**
+     * @var array<string, mixed>
+     */
+    public array $attributes = [
+        'class' => 'aside anakin-aside',
+        'id' => 'aside',
+    ];
+
+    /**
+     * The logo shares the header row with the pin button, which is where the skeleton puts it too — so the
+     * collapsed aside keeps one top edge whichever theme renders it.
+     */
     #[Override]
-    protected function renderContent(): Stringable
+    protected function getHeader(): ?Stringable
     {
-        return Aside::make()
-            ->attributes($this->attributes)
-            ->addClass('anakin-aside')
-            ->content($this->getLogo(), $this->getMainMenu(), $this->getAccountMenu());
+        return Div::make()
+            ->class('aside-header')
+            ->content($this->getLogo(), $this->getPinButton());
     }
 
     protected function getLogo(): Stringable
