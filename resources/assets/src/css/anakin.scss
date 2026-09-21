@@ -28,7 +28,7 @@
   .aside-header {
     // The logo takes the row and pushes the pin button to its end.
     justify-content: space-between;
-    padding-inline: 2rem;
+    padding-inline: 2rem 1rem;
   }
 
   // The logo sits at the aside's left edge, which is the one part of it the collapsed rail leaves uncovered —
