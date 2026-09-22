@@ -1,6 +1,6 @@
 ## 3.0.0 (in development)
 
-- **The `.aside-header` holds the logo alone**, the skeleton's pin button having moved into the main menu —
+- **The `.aside-header` holds the logo alone**, the skeleton's pin button having moved to the navbar —
   `AnakinAsideMenu::getHeader()` no longer renders `getPinButton()`, which is gone along with the row's
   `justify-content: space-between`.
 
