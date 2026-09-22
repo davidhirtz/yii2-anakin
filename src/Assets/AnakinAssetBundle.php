@@ -16,6 +16,10 @@ class AnakinAssetBundle extends AbstractAssetBundle
     public $depends = [AdminAssetBundle::class];
     public $sourcePath = '@anakin/../resources/assets/dist';
 
+    public array $logoAttributes = [
+        'style' => ['height' => '6rem'],
+    ];
+
     private string|null|false $logoUrl = null;
 
     public function getLogoUrl(): string|false

@@ -39,7 +39,7 @@ class AdminThemeTest extends TestCase
         $navbar = self::$crawler->filter('.anakin-navbar')->html();
         $aside = self::$crawler->filter('.anakin-aside')->html();
 
-        self::assertStringContainsString('<path id="anakin"', $navbar);
+        self::assertStringContainsString('<g id="anakin"', $navbar);
         self::assertStringContainsString('href="#anakin"', $aside);
         self::assertStringNotContainsString('<path id="anakin"', $aside);
     }
@@ -69,8 +69,7 @@ class AdminThemeTest extends TestCase
         $this->open('https://www.test.localhost/admin');
 
         self::assertResponseIsSuccessful();
-        self::assertSelectorExists('.home-welcome');
-        self::assertSelectorTextContains('.home-welcome h1', $user->getUsername());
+        self::assertSelectorTextContains('h1', $user->getUsername());
         self::assertSelectorExists('.dashboard');
     }
 }

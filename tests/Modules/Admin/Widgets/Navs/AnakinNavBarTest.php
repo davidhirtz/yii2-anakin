@@ -19,7 +19,7 @@ class AnakinNavBarTest extends TestCase
         $html = NavBar::make()->render();
 
         self::assertStringContainsString('class="anakin-navbar navbar"', $html);
-        self::assertStringContainsString('<path id="anakin"', $html);
+        self::assertStringContainsString('<g id="anakin"', $html);
         self::assertStringContainsString('class="navbar-search"', $html);
     }
 

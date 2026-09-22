@@ -31,8 +31,8 @@ class AnakinLogoTest extends TestCase
     {
         $html = AnakinLogo::make()->render();
 
-        self::assertStringContainsString('<path id="anakin"', $html);
-        self::assertStringContainsString('viewBox="0 0 888 137"', $html);
+        self::assertStringContainsString('<g id="anakin"', $html);
+        self::assertStringContainsString('viewBox="0 0 48 40"', $html);
     }
 
     /**
