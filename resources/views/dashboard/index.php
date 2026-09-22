@@ -7,20 +7,22 @@ declare(strict_types=1);
  * @var View $this
  */
 
-use Hirtz\Anakin\Assets\AnakinAssetBundle;
 use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinDashboardLogo;
 use Hirtz\Skeleton\Modules\Admin\Widgets\DirectoryAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\EnvironmentAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\MigrationAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
 use Hirtz\Skeleton\Modules\Admin\Widgets\SentryAlert;
+use Hirtz\Skeleton\Web\User;
 use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 
 $this->title(Yii::t('skeleton', 'DASHBOARD_NAV_ITEM_LABEL'));
 
-
 echo DashboardHeader::make()
+    ->title(Yii::t('anakin', 'ANAKIN_DASHBOARD_HEADER', [
+        'user' => User::current()->identity->getUsername()
+    ]))
     ->content(AnakinDashboardLogo::make());
 
 echo MigrationAlert::make();

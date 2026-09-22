@@ -6,7 +6,5 @@
  */
 return [
     'ANAKIN_DASHBOARD_CONTACT' => 'Need a hand?',
-    'ANAKIN_DASHBOARD_GREETING' => 'Hello {name}, good to <br>have you back!',
-    'ANAKIN_DASHBOARD_QUESTION' => 'What do you want <br>to do today?',
-    'ANAKIN_DASHBOARD_SKYPE' => 'Skype with ANAKIN',
+    'ANAKIN_DASHBOARD_HEADER' => 'Hello {user}, good to have you back!',
 ];
