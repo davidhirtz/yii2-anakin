@@ -20,15 +20,15 @@ class AnakinAsideMenu extends AsideMenu
     ];
 
     /**
-     * The logo shares the header row with the pin button, which is where the skeleton puts it too — so the
-     * collapsed aside keeps one top edge whichever theme renders it.
+     * The skeleton renders no header at all, the pin having moved into the main menu — the row exists for a
+     * theme with a logo of its own, which is this one.
      */
     #[Override]
     protected function getHeader(): ?Stringable
     {
         return Div::make()
             ->class('aside-header')
-            ->content($this->getLogo(), $this->getPinButton());
+            ->content($this->getLogo());
     }
 
     protected function getLogo(): Stringable

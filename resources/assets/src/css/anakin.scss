@@ -26,8 +26,7 @@
 
 .anakin-aside {
   .aside-header {
-    // The logo takes the row and pushes the pin button to its end.
-    justify-content: space-between;
+    // The logo sits where a nav link's icon does, 2rem in, so the collapsed rail centres both alike.
     padding-inline: 2rem 1rem;
   }
 

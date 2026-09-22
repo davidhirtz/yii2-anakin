@@ -1,5 +1,9 @@
 ## 3.0.0 (in development)
 
+- **The `.aside-header` holds the logo alone**, the skeleton's pin button having moved into the main menu —
+  `AnakinAsideMenu::getHeader()` no longer renders `getPinButton()`, which is gone along with the row's
+  `justify-content: space-between`.
+
 - **The aside logo moved into the skeleton's `.aside-header`**, which it now shares with the pin button that
   collapses the aside to its icons: `AnakinAsideMenu` overrides `getHeader()` instead of `renderContent()`, and
   carries the `anakin-aside` class on its `$attributes` default. The logo is the one thing of the theme's that
