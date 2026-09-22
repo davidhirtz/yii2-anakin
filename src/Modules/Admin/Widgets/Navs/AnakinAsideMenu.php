@@ -19,19 +19,8 @@ class AnakinAsideMenu extends AsideMenu
         'id' => 'aside',
     ];
 
-    /**
-     * The skeleton renders no header at all, the pin having moved into the main menu — the row exists for a
-     * theme with a logo of its own, which is this one.
-     */
     #[Override]
     protected function getHeader(): ?Stringable
-    {
-        return Div::make()
-            ->class('aside-header')
-            ->content($this->getLogo());
-    }
-
-    protected function getLogo(): Stringable
     {
         return AnakinLogo::make()
             ->useHref();

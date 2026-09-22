@@ -25,22 +25,22 @@
 }
 
 .anakin-aside {
-  .aside-header {
-    // The logo sits where a nav link's icon does, 2rem in, so the collapsed rail centres both alike.
-    padding-inline: 2rem 1rem;
-  }
-
-  // The logo sits at the aside's left edge, which is the one part of it the collapsed rail leaves uncovered —
-  // so it is the only thing that has to answer for the state. `--aside-open` is the skeleton's, and is unset
-  // wherever the aside is not collapsed.
   .anakin-logo {
-    min-width: 0;
-    opacity: var(--aside-open, 1);
-    overflow: hidden;
-    transition: opacity .2s;
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      display: block;
+      min-width: 0;
+      opacity: var(--aside-open, 1);
+      overflow: hidden;
+      padding-inline: 2rem;
+      transition: opacity .2s;
+    }
   }
 
   .aside-main {
-    padding-top: 1rem;
+    @include media-breakpoint-up(sm) {
+      padding-top: calc(2rem + 1px);
+    }
   }
 }

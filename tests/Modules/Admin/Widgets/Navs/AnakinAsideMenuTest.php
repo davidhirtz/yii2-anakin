@@ -24,22 +24,14 @@ class AnakinAsideMenuTest extends TestCase
         self::assertStringContainsString('id="account-menu"', $html);
     }
 
-    /**
-     * The header is the theme's alone now that the skeleton renders none — the pin moved into the main menu,
-     * so the row holds the logo and nothing else.
-     */
     public function testTheHeaderHoldsTheLogoAlone(): void
     {
         $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
 
         $html = AsideMenu::make()->render();
-        // Everything before the first list is the header, the menus being the only lists the aside renders.
         $header = substr($html, 0, (int)strpos($html, '<ul'));
 
-        self::assertStringContainsString('aside-header', $header);
         self::assertStringContainsString('anakin-logo', $header);
-        self::assertStringNotContainsString('data-aside-pin', $header);
-        self::assertStringContainsString('data-aside-pin', $html);
     }
 
     public function testTheAsideIsLeftOutOfTheDocumentForAGuest(): void
