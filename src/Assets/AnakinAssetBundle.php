@@ -16,6 +16,9 @@ class AnakinAssetBundle extends AbstractAssetBundle
     public $depends = [AdminAssetBundle::class];
     public $sourcePath = '@anakin/../resources/assets/dist';
 
+    /**
+     * @var array<string, mixed>
+     */
     public array $logoAttributes = [
         'style' => ['height' => '6rem'],
     ];
