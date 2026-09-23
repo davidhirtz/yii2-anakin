@@ -1,43 +1,14 @@
 ## 3.0.0 (in development)
 
-- **The `.aside-header` holds the logo alone**, the skeleton's pin button having moved to the navbar —
-  `AnakinAsideMenu::getHeader()` no longer renders `getPinButton()`, which is gone along with the row's
-  `justify-content: space-between`.
-
-- **The aside logo moved into the skeleton's `.aside-header`**, which it now shares with the pin button that
-  collapses the aside to its icons: `AnakinAsideMenu` overrides `getHeader()` instead of `renderContent()`, and
-  carries the `anakin-aside` class on its `$attributes` default. The logo is the one thing of the theme's that
-  the collapsed rail leaves uncovered, so it fades with the skeleton's `--aside-open`. A guest gets no aside at all now that the
-  skeleton leaves an empty one out of the document rather than hiding it — the logo used to keep it rendering
-  on the login page.
-
-- `Assets\AnakinAssetBundle::DEFAULT_LOGO_URL` and `Assets\AnakinMailAssetBundle::MAIL_LOGO_URL` are
-  `final public`: a project ships the file itself, so the path it has to put it at is part of the API rather
-  than something to repeat.
-
-- **The admin logo lives here.** `Modules\Admin\Widgets\Navs\AnakinLogo` replaces the skeleton's `AsideLogo`,
-  `NavBarLogo` and `Navs\Traits\LogoTrait`, and `AnakinNavBar` / `AnakinAsideMenu` are bound to the skeleton's
-  `Navs\NavBar` / `Navs\AsideMenu` through the container, so a project names neither. The navbar inlines the SVG
-  path and the aside references it through `AnakinLogo::useHref()`: the navbar renders outside `#wrap` and
-  survives every htmx swap, so the definition the `<use>` needs is always on the page
-- The `anakin` message source was registered under `@anakin/messages` — the bundle's messages are one directory
-  further up — and without `forceTranslation`, so every `ANAKIN_*` key rendered as itself in English
-- **The themed dashboard renders again.** `view.theme.pathMap` named
-  `@skeleton/../resources/views/admin/views/dashboard`, a directory that has never existed, so the override was
-  dead — which is the only reason nobody hit the view behind it, still calling the removed `Nav::widget([...])`
-  API and reading a `$panels` variable the dashboard controller stopped passing when `Widgets\Panels\Dashboard`
-  replaced it. The view now renders the skeleton's `MigrationAlert`, `DirectoryAlert` and `EnvironmentAlert`
-  beside the dashboard panel, as the view it overrides does — a theme that drops them hides the two conditions
-  an admin is meant to act on. Its `home-*` markup is unstyled until `anakin.scss` catches up
-- The dashboard view translates through `ANAKIN_DASHBOARD_*` keys instead of English literals, and the greeting
-  is one key rather than two half-sentences. `messages/config.php` declares `categories`; without it the message
-  command deleted every `anakin.php`, since `sourcePath` never reached `resources/views`
-- `anakin.css` is built with esbuild from `resources/assets/src/css/anakin.scss` via the skeleton's shared
-  `esbuild.config.js` (`npm run build` / `npm run dev`). It is an override layer loaded after the skeleton's
-  `admin.css`, not a rebuilt copy of it as in 2.x
-- `Assets\AnakinAssetBundle::$sourcePath` points at the bundle's own `resources/assets/dist`; it inherited the
-  skeleton's, so `css/anakin.css` was published from the wrong directory
-- Renamed `Assets\AnakinAssetBundle::$_logoUrl` to `$logoUrl`
+- Renamed the namespace `davidhirtz\yii2\anakin\` to `Hirtz\Anakin\` and the directories to StudlyCase; requires PHP 8.3+ and `davidhirtz/yii2-skeleton` 3.0
+- Renamed `assets\AnakinAsset` to `Assets\AnakinAssetBundle` and `assets\AnakinMailAsset` to `Assets\AnakinMailAssetBundle`; the mail logo path is `AnakinMailAssetBundle::MAIL_LOGO_URL` instead of an overridden `DEFAULT_LOGO_URL`, both constants are `final`, and `$_logoUrl` is private
+- Moved the mail layout to `resources/mail/layouts/html.php`, the dashboard view to `resources/views/dashboard/index.php` and the messages to `messages/`; the stylesheet is built from `resources/assets/src/css/anakin.scss` into `resources/assets/dist/css/anakin.css` and loads as an override layer after the skeleton's `admin.css` instead of replacing it
+- Removed the TinyMCE skin and `content_css` overrides, the published fonts and flag images, the Skype dashboard item and the `ru`, `zh-CN` and `zh-TW` message files
+- Replaced the English message texts with the keys `ANAKIN_DASHBOARD_HEADER` and `ANAKIN_DASHBOARD_CONTACT`, translated with `forceTranslation`
+- Changed the default favicon to `/images/favicons/favicon.svg` (was `favicon-32x32.png`); the mail layout loads its fonts and the Anakin footer logo from `https://www.anakin.co/mail/`
+- Changed `AnakinMailAssetBundle::getLogoUrl()` to fall back to the admin logo and to answer an absolute URL, or `false` when the URL manager has no host
+- Added `Modules\Admin\Widgets\Navs\AnakinNavBar` and `AnakinAsideMenu`, bound to the skeleton's `NavBar` and `AsideMenu` through the container unless a project defines them, plus `AnakinLogo` and `AnakinDashboardLogo`
+- Changed the dashboard view to render the skeleton's `Widgets\Panels\Dashboard` and the migration, directory, environment and Sentry alerts
 
 ## 2.2.2 (Nov 8, 2025)
 
