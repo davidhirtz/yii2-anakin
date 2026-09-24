@@ -1,3 +1,7 @@
+## Unreleased
+
+- Added `Bootstrap::MEDIA_AVIF_QUALITY`: with `yii2-media` installed, its AVIF transformations default to quality 80
+
 ## 3.0.0 (September 23, 2026)
 
 - Renamed the namespace `davidhirtz\yii2\anakin\` to `Hirtz\Anakin\` and the directories to StudlyCase; requires PHP 8.3+ and `davidhirtz/yii2-skeleton` 3.0

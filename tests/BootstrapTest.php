@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Hirtz\Anakin\Tests;
 
+use Hirtz\Anakin\Bootstrap;
 use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinAsideMenu;
 use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinNavBar;
 use Hirtz\Skeleton\Assets\AdminAssetBundle;
@@ -43,6 +44,23 @@ class BootstrapTest extends TestCase
     public function testTheProjectsOwnEmailSurvives(): void
     {
         self::assertEquals('test@test.localhost', Yii::$app->params['email']);
+    }
+
+    /**
+     * The theme names the media module by id only, so without yii2-media it must not leave a module behind.
+     */
+    public function testTheMediaAvifQualityIsRaisedOnlyWithTheMediaBundle(): void
+    {
+        $modules = Yii::$app->getModules();
+
+        if (!isset(Yii::$app->extensions['davidhirtz/yii2-media'])) {
+            self::assertArrayNotHasKey('media', $modules);
+            return;
+        }
+
+        $media = Yii::$app->getModule('media');
+        self::assertNotNull($media);
+        self::assertSame(Bootstrap::MEDIA_AVIF_QUALITY, $media->avifQuality ?? null);
     }
 
     public function testTheFaviconIsConfiguredOnTheAdminAssetBundle(): void

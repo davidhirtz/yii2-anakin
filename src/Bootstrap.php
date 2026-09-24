@@ -24,6 +24,11 @@ use yii\web\View;
 class Bootstrap implements BootstrapInterface
 {
     /**
+     * Anakin's projects want sharper AVIF transformations than the media default of 60.
+     */
+    final public const int MEDIA_AVIF_QUALITY = 80;
+
+    /**
      * @param Application<User> $app
      */
     public function bootstrap($app): void
@@ -38,6 +43,11 @@ class Bootstrap implements BootstrapInterface
         ];
 
         $app->params['email'] ??= 'hello@anakin.co';
+
+        // named by package, the theme requiring nothing of yii2-media; a project's own `avifQuality` wins
+        if (isset($app->extensions['davidhirtz/yii2-media'])) {
+            $app->extendModule('media', ['avifQuality' => self::MEDIA_AVIF_QUALITY]);
+        }
 
         $app->extendComponents([
             'assetManager' => [

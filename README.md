@@ -39,6 +39,8 @@ Each is optional: a missing logo renders nothing.
   `Modules\Admin\Widgets\Navs\AnakinNavBar` and `…\AsideMenu` to `AnakinAsideMenu`, only where the container has
   none. A project's own definition for either class wins.
 - `Assets\AnakinAssetBundle` on every action of the admin module.
+- With `davidhirtz/yii2-media` installed, `modules.media.avifQuality` of `80` (`Bootstrap::MEDIA_AVIF_QUALITY`,
+  the media default is `60`), unless the project configured its own.
 
 The bundle has no module, so there are no `modules.<id>.*` flags. Its options live on the two asset bundles,
 set through `components.assetManager.bundles`:
