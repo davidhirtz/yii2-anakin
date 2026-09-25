@@ -1,4 +1,4 @@
-## Unreleased
+## 3.1.0 (September 25, 2026)
 
 - Added `Bootstrap::MEDIA_AVIF_QUALITY`: with `yii2-media` installed, its AVIF transformations default to quality 80
 
