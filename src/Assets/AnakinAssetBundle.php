@@ -20,7 +20,7 @@ class AnakinAssetBundle extends AbstractAssetBundle
      * @var array<string, mixed>
      */
     public array $logoAttributes = [
-        'style' => ['height' => '6rem'],
+        'style' => ['height' => '3rem'],
     ];
 
     private string|null|false $logoUrl = null;
