@@ -47,7 +47,7 @@ set through `components.assetManager.bundles`:
 
 | Bundle                     | Property / method              | Default                          | Meaning                                                        |
 |----------------------------|--------------------------------|----------------------------------|----------------------------------------------------------------|
-| `Assets\AnakinAssetBundle` | `$logoAttributes`              | `['style' => ['height' => '6rem']]` | Attributes of the dashboard logo `<img>`                    |
+| `Assets\AnakinAssetBundle` | `$logoAttributes`              | `['style' => ['height' => '3rem']]` | Attributes of the dashboard logo `<img>`                    |
 | `Assets\AnakinAssetBundle` | `setLogoUrl(string\|false\|null)` | `null`                        | `null` uses `/images/admin/logo.svg` if the file exists, `false` renders no logo, a string is used as is |
 | `Assets\AnakinMailAssetBundle` | `$showAnakinLogo`          | `true`                           | Renders the Anakin logo below the mail body                    |
 | `Assets\AnakinMailAssetBundle` | `$logoWidth`               | `'250px'`                        | CSS width of the mail header logo                              |
