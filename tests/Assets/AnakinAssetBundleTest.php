@@ -73,6 +73,22 @@ class AnakinAssetBundleTest extends TestCase
         );
     }
 
+    public function testTheMailLogoUrlCanBeConfigured(): void
+    {
+        $this->createLogo(AnakinMailAssetBundle::MAIL_LOGO_URL);
+
+        $bundle = $this->createBundle(AnakinMailAssetBundle::class);
+        $bundle->setLogoUrl('/images/own-logo.svg');
+
+        self::assertEquals($this->getWebRequest()->getHostInfo() . '/images/own-logo.svg', $bundle->getLogoUrl());
+
+        $bundle->setLogoUrl('https://cdn.test.localhost/logo.svg');
+        self::assertEquals('https://cdn.test.localhost/logo.svg', $bundle->getLogoUrl());
+
+        $bundle->setLogoUrl(false);
+        self::assertFalse($bundle->getLogoUrl());
+    }
+
     /**
      * @param class-string<AnakinAssetBundle> $class
      */

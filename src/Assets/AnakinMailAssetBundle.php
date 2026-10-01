@@ -16,6 +16,7 @@ class AnakinMailAssetBundle extends AnakinAssetBundle
     public string $logoWidth = '250px';
 
     private string|null|false $logoUrl = null;
+    private string|null|false $absoluteLogoUrl = null;
 
     #[Override]
     public function init(): void
@@ -30,17 +31,34 @@ class AnakinMailAssetBundle extends AnakinAssetBundle
     #[Override]
     public function getLogoUrl(): string|false
     {
-        if ($this->logoUrl === null) {
+        if ($this->absoluteLogoUrl === null) {
             $path = Yii::getAlias('@webroot') . self::MAIL_LOGO_URL;
-            $this->logoUrl = file_exists($path) ? self::MAIL_LOGO_URL : parent::getLogoUrl();
+            $url = $this->logoUrl ?? (file_exists($path) ? self::MAIL_LOGO_URL : parent::getLogoUrl());
 
-            if ($this->logoUrl) {
-                $hostInfo = $this->getHostInfo();
-                $this->logoUrl = $hostInfo ? ($hostInfo . $this->logoUrl) : false;
-            }
+            $this->absoluteLogoUrl = $url ? $this->getAbsoluteUrl($url) : false;
         }
 
-        return $this->logoUrl;
+        return $this->absoluteLogoUrl;
+    }
+
+    /**
+     * The parent's property is private to it, so the mail bundle keeps the configured URL itself.
+     */
+    #[Override]
+    public function setLogoUrl(string|false|null $logoUrl): void
+    {
+        $this->logoUrl = $logoUrl;
+        $this->absoluteLogoUrl = null;
+    }
+
+    protected function getAbsoluteUrl(string $url): string|false
+    {
+        if (preg_match('#^([a-z][a-z0-9+.-]*:)?//#i', $url)) {
+            return $url;
+        }
+
+        $hostInfo = $this->getHostInfo();
+        return $hostInfo ? ($hostInfo . $url) : false;
     }
 
     public function getHostInfo(): ?string

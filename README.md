@@ -51,7 +51,7 @@ set through `components.assetManager.bundles`:
 | `Assets\AnakinAssetBundle` | `setLogoUrl(string\|false\|null)` | `null`                        | `null` uses `/images/admin/logo.svg` if the file exists, `false` renders no logo, a string is used as is |
 | `Assets\AnakinMailAssetBundle` | `$showAnakinLogo`          | `true`                           | Renders the Anakin logo below the mail body                    |
 | `Assets\AnakinMailAssetBundle` | `$logoWidth`               | `'250px'`                        | CSS width of the mail header logo                              |
-| `Assets\AnakinMailAssetBundle` | `setLogoUrl(string\|false\|null)` | `null`                     | `null` uses `/images/mail/logo.svg`, then the admin logo; the URL is made absolute with `urlManager.hostInfo` |
+| `Assets\AnakinMailAssetBundle` | `setLogoUrl(string\|false\|null)` | `null`                     | `null` uses `/images/mail/logo.svg`, then the admin logo; `false` renders no logo; a path is made absolute with `urlManager.hostInfo`, a full URL is used as is |
 
 ```php
 'components' => [
