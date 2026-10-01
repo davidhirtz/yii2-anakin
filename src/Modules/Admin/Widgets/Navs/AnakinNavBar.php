@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Hirtz\Anakin\Modules\Admin\Widgets\Navs;
 
 use Hirtz\Skeleton\Html\Div;
-use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\MainMenu;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\NavBar;
 use Override;
 use Stringable;
