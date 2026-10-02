@@ -196,7 +196,7 @@ $logo = $asset->getLogoUrl();
 if ($logo) {
     ?>
     <div class="header">
-        <img src="<?= $logo; ?>" class="logo" alt="<?= Yii::$app->name; ?>">
+        <img src="<?= Html::encode($logo); ?>" class="logo" alt="<?= Html::encode(Yii::$app->name); ?>">
     </div>
     <?php
 }
