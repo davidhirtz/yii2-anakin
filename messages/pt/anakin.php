@@ -6,5 +6,5 @@
  */
 return [
     'ANAKIN_DASHBOARD_CONTACT' => 'Precisas de ajuda?',
-    'ANAKIN_DASHBOARD_HEADER' => 'Olá {user}, que bom tê-lo de volta!',
+    'ANAKIN_DASHBOARD_HEADER' => 'Olá {user}, que bom ter-te de volta!',
 ];
