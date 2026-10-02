@@ -1,4 +1,4 @@
-## Unreleased
+## 3.2.1 (October 2, 2026)
 
 - Fixed `AnakinMailAssetBundle::setLogoUrl()` being ignored
 
