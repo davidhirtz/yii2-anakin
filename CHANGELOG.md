@@ -1,4 +1,4 @@
-## Unreleased
+## 3.3.0 (October 14, 2026)
 
 - Changed `Bootstrap::MEDIA_AVIF_QUALITY` to 60
 
