@@ -1,3 +1,7 @@
+## Unreleased
+
+- Changed `Bootstrap::MEDIA_AVIF_QUALITY` to 60
+
 ## 3.2.1 (October 2, 2026)
 
 - Fixed `AnakinMailAssetBundle::setLogoUrl()` being ignored
