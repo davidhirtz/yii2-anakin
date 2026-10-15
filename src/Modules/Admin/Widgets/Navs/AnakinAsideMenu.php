@@ -13,7 +13,7 @@ class AnakinAsideMenu extends AsideMenu
     /**
      * @var array<string, mixed>
      */
-    public array $attributes = [
+    protected array $attributes = [
         'class' => 'aside anakin-aside',
         'id' => 'aside',
     ];
