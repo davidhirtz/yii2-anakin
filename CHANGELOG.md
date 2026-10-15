@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Changed the `davidhirtz/yii2-skeleton` requirement to `^3.18` (protected widget options)
 - Changed `AnakinAsideMenu::$attributes` to protected, set through `attributes()`
 
 ## 3.3.0 (October 14, 2026)
