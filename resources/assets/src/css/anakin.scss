@@ -1,4 +1,4 @@
-@use "shared/breakpoints" as *;
+// The admin's breakpoints: `sm` is 48rem, `md` 64rem (the skeleton's `shared/_breakpoints.scss`).
 
 .anakin-logo-wrap {
   min-height: 2.5rem;
@@ -10,13 +10,13 @@
 }
 
 .anakin-navbar {
-  @include media-breakpoint-down(sm) {
+  @media (width < 64rem) {
     width: 100%;
     background-color: transparent;
     justify-content: space-between;
   }
 
-  @include media-breakpoint-up(md) {
+  @media (min-width: 64rem) {
     .anakin-logo {
       display: none;
     }
@@ -27,14 +27,14 @@
   .anakin-logo-wrap {
     display: none;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 48rem) {
       display: block;
       padding-inline: 1rem;
     }
   }
 
   .aside-main {
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 48rem) {
       padding-top: calc(2rem + 1px);
     }
   }

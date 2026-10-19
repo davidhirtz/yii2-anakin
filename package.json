@@ -7,5 +7,11 @@
   "scripts": {
     "build": "node esbuild.js",
     "dev": "node esbuild.js --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.28",
+    "esbuild-sass-plugin": "^3.3.1",
+    "postcss": "^8.4.49"
   }
 }
