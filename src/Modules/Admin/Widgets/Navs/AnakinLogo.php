@@ -7,6 +7,7 @@ namespace Hirtz\Anakin\Modules\Admin\Widgets\Navs;
 use Hirtz\Skeleton\Html\A;
 use Hirtz\Skeleton\Html\Div;
 use Hirtz\Skeleton\Html\Svg;
+use Hirtz\Skeleton\Modules\Admin\Module;
 use Hirtz\Skeleton\Widgets\Widget;
 use Override;
 use Stringable;
@@ -44,7 +45,7 @@ class AnakinLogo extends Widget
     protected function getLink(): ?Stringable
     {
         return A::make()
-            ->href(!$this->webuser->getIsGuest() ? ['/admin/dashboard/index'] : null)
+            ->href(!$this->webuser->getIsGuest() ? Module::current()->getHomeRoute() : null)
             ->content($this->getLogo());
     }
 }

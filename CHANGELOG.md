@@ -1,3 +1,7 @@
+## Unreleased
+
+- Changed the `davidhirtz/yii2-skeleton` requirement to `^3.21` (`Module::getHomeRoute()`)
+
 ## 3.4.0 (October 15, 2026)
 
 - Changed the `davidhirtz/yii2-skeleton` requirement to `^3.18` (protected widget options)

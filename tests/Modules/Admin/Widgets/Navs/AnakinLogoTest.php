@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Hirtz\Anakin\Tests\Modules\Admin\Widgets\Navs;
 
 use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinLogo;
+use Hirtz\Skeleton\Models\User;
 use Hirtz\Skeleton\Test\TestCase;
 use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
 
@@ -14,9 +15,18 @@ class AnakinLogoTest extends TestCase
 
     public function testTheLogoLinksToTheDashboard(): void
     {
-        $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
+        $user = $this->getUserFromFixture('admin');
+        $this->assignPermission($user->id, User::AUTH_USER);
+        $this->getWebUser()->setIdentity($user);
 
         self::assertStringContainsString('href="/admin/dashboard/index"', AnakinLogo::make()->render());
+    }
+
+    public function testTheLogoLeadsAUserTheDashboardDoesNotAdmitToTheirAccount(): void
+    {
+        $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
+
+        self::assertStringContainsString('href="/admin/account/update"', AnakinLogo::make()->render());
     }
 
     /**
