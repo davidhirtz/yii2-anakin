@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Hirtz\Anakin\Tests\Modules\Admin\Widgets\Navs;
 
+use Hirtz\Skeleton\Models\User;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\AsideMenu;
 use Hirtz\Skeleton\Test\TestCase;
 use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
@@ -14,7 +15,9 @@ class AnakinAsideMenuTest extends TestCase
 
     public function testTheAsideReferencesTheLogoAndKeepsTheSkeletonMenus(): void
     {
-        $this->getWebUser()->setIdentity($this->getUserFromFixture('admin'));
+        $user = $this->getUserFromFixture('admin');
+        $this->assignPermission($user->id, User::AUTH_USER);
+        $this->getWebUser()->setIdentity($user);
 
         $html = AsideMenu::make()->render();
 
