@@ -1,4 +1,4 @@
-## Unreleased
+## 3.5.0 (October 21, 2026)
 
 - Changed the `davidhirtz/yii2-skeleton` requirement to `^3.21` (`Module::getHomeRoute()`)
 
