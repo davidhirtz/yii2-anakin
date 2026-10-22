@@ -39,7 +39,7 @@ echo Dashboard::make();
             <p class="strong"><?= Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT'); ?></p>
             <p>
                 <a href="mailto:hello@anakin.co">hello@anakin.co</a>
-                <br> Daniel <a href="tel:491707731849">+49 170 773 1849</a>
+                <br> Daniel <a href="tel:+491707731849">+49 170 773 1849</a>
             </p>
             <a href="https://www.anakin.co" class="home-anakin" target="_blank"></a>
         </div>
