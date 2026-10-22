@@ -7,6 +7,7 @@ namespace Hirtz\Anakin\Tests\Functional;
 use Hirtz\Skeleton\Test\TestCase;
 use Hirtz\Skeleton\Test\Traits\FunctionalTestTrait;
 use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
+use Symfony\Component\DomCrawler\Crawler;
 
 class AdminThemeTest extends TestCase
 {
@@ -71,5 +72,21 @@ class AdminThemeTest extends TestCase
         self::assertResponseIsSuccessful();
         self::assertSelectorTextContains('h1', $user->getUsername());
         self::assertSelectorExists('.dashboard');
+    }
+
+    /**
+     * The themed view replaces the skeleton's, so it has to carry the alerts the skeleton's gained since.
+     */
+    public function testTheDashboardWarnsOfAnUnpinnedHost(): void
+    {
+        $user = $this->getUserFromFixture('admin');
+        $this->assignAdminRole($user->id);
+
+        $this->getWebUser()->login($user);
+        $this->open('https://www.example.com/admin');
+
+        self::assertResponseIsSuccessful();
+        $warnings = self::$crawler->filter('[data-alert="warning"]')->each(fn (Crawler $node): string => $node->text());
+        self::assertStringContainsString('allowedHosts', implode(' ', $warnings));
     }
 }

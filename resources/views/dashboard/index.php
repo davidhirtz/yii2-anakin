@@ -15,6 +15,7 @@ use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
 use Hirtz\Skeleton\Modules\Admin\Widgets\SentryAlert;
 use Hirtz\Skeleton\Web\User;
 use Hirtz\Skeleton\Web\View;
+use Hirtz\Skeleton\Modules\Admin\Widgets\HostAlert;
 use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 
 $this->title(Yii::t('skeleton', 'DASHBOARD_NAV_ITEM_LABEL'));
@@ -29,6 +30,7 @@ echo MigrationAlert::make();
 echo DirectoryAlert::make();
 echo EnvironmentAlert::make();
 echo SentryAlert::make();
+echo HostAlert::make();
 echo Dashboard::make();
 ?>
 <div class="container">
@@ -37,7 +39,7 @@ echo Dashboard::make();
             <p class="strong"><?= Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT'); ?></p>
             <p>
                 <a href="mailto:hello@anakin.co">hello@anakin.co</a>
-                <br> Daniel<a href="tel:491707731849">+49 170 773 1849</a>
+                <br> Daniel <a href="tel:491707731849">+49 170 773 1849</a>
             </p>
             <a href="https://www.anakin.co" class="home-anakin" target="_blank"></a>
         </div>
