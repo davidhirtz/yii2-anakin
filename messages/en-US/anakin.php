@@ -5,6 +5,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'ANAKIN_DASHBOARD_CONTACT' => 'Need a hand?',
-    'ANAKIN_DASHBOARD_HEADER' => 'Hello {user}, good to have you back!',
+    'ANAKIN_DASHBOARD_CONTACT_TEXT' => 'Need a hand?',
+    'ANAKIN_DASHBOARD_TITLE' => 'Hello {user}, good to have you back!',
 ];

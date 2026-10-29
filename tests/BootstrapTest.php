@@ -35,7 +35,7 @@ class BootstrapTest extends TestCase
 
     public function testTheMessagesAreTranslated(): void
     {
-        self::assertEquals('Need a hand?', Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT'));
+        self::assertEquals('Need a hand?', Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT_TEXT'));
     }
 
     /**

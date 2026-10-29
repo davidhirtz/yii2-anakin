@@ -1,3 +1,7 @@
+## Unreleased
+
+- Changed every message key to the `{DOMAIN}_{SUBJECT}_{KIND}` scheme
+
 ## 3.5.0 (October 21, 2026)
 
 - Changed the `davidhirtz/yii2-skeleton` requirement to `^3.21` (`Module::getHomeRoute()`)

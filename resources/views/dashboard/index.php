@@ -21,7 +21,7 @@ use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 $this->title(Yii::t('skeleton', 'DASHBOARD_LABEL'));
 
 echo DashboardHeader::make()
-    ->title(Yii::t('anakin', 'ANAKIN_DASHBOARD_HEADER', [
+    ->title(Yii::t('anakin', 'ANAKIN_DASHBOARD_TITLE', [
         'user' => User::current()->identity->getUsername()
     ]))
     ->content(AnakinDashboardLogo::make());
@@ -36,7 +36,7 @@ echo Dashboard::make();
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <p class="strong"><?= Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT'); ?></p>
+            <p class="strong"><?= Yii::t('anakin', 'ANAKIN_DASHBOARD_CONTACT_TEXT'); ?></p>
             <p>
                 <a href="mailto:hello@anakin.co">hello@anakin.co</a>
                 <br> Daniel <a href="tel:+491707731849">+49 170 773 1849</a>
