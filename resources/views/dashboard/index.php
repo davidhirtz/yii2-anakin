@@ -18,7 +18,7 @@ use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Modules\Admin\Widgets\HostAlert;
 use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 
-$this->title(Yii::t('skeleton', 'DASHBOARD_NAV_ITEM_LABEL'));
+$this->title(Yii::t('skeleton', 'DASHBOARD_LABEL'));
 
 echo DashboardHeader::make()
     ->title(Yii::t('anakin', 'ANAKIN_DASHBOARD_HEADER', [
