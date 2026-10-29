@@ -46,8 +46,7 @@ class AdminThemeTest extends TestCase
     }
 
     /**
-     * The aside holds nothing a guest may reach, so it is left out of the document rather than hidden — the
-     * theme's logo would otherwise keep it rendering on the login page.
+     * The aside holds nothing a guest may reach, so it is left out of the document rather than hidden.
      */
     public function testTheAsideIsLeftOutOfTheLoginPage(): void
     {
@@ -58,8 +57,7 @@ class AdminThemeTest extends TestCase
     }
 
     /**
-     * The theme replaces the skeleton's dashboard view through the `view.theme.pathMap`, which named a directory
-     * that does not exist until 2026-09-15 — so nothing ever rendered this view and nothing noticed it was stale.
+     * The `view.theme.pathMap` named a missing directory until 2026-09-15, so nobody noticed this view was stale.
      */
     public function testTheDashboardRendersTheThemedView(): void
     {

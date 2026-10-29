@@ -49,8 +49,7 @@ class AnakinAssetBundleTest extends TestCase
     }
 
     /**
-     * A mail is read away from the site, so its logo is absolute — and it falls back to the admin one where the
-     * mail images ship none of their own.
+     * A mail is read away from the site, so its logo is absolute, falling back to the admin one.
      */
     public function testTheMailLogoUrlFallsBackToTheAdminLogo(): void
     {

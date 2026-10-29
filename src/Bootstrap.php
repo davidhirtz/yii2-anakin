@@ -70,7 +70,7 @@ class Bootstrap implements ConfigBootstrapInterface
     }
 
     /**
-     * Anakin's projects want sharper AVIF transformations than the media default of 60.
+     * Anakin's projects want sharper AVIF transformations than the media default.
      */
     final public const int MEDIA_AVIF_QUALITY = 60;
 

@@ -11,8 +11,7 @@ use Hirtz\Skeleton\Test\TestCase;
 use Yii;
 
 /**
- * A mail is sent from a command as well, where `UrlManager::getHostInfo()` throws rather than answering the host
- * — hence a case of its own rather than a method in {@see AnakinAssetBundleTest}.
+ * A mail is sent from a command as well, where `UrlManager::getHostInfo()` throws, hence a case of its own.
  */
 class AnakinMailAssetBundleConsoleTest extends TestCase
 {
