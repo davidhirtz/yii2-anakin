@@ -5,7 +5,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'ANAKIN_DASHBOARD_CONTACT_TEXT' => 'Precisas de ajuda?',
+    'ANAKIN_DASHBOARD_CONTACT_TEXT' => 'Precisa de ajuda?',
     'ANAKIN_DASHBOARD_ENTRIES_BUTTON' => 'Ver todas as entradas',
-    'ANAKIN_DASHBOARD_TITLE' => 'Olá {user}, que bom ter-te de volta!',
 ];

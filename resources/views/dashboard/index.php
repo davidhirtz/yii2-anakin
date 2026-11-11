@@ -13,7 +13,6 @@ use Hirtz\Skeleton\Modules\Admin\Widgets\EnvironmentAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\MigrationAlert;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\DashboardHeader;
 use Hirtz\Skeleton\Modules\Admin\Widgets\SentryAlert;
-use Hirtz\Skeleton\Web\User;
 use Hirtz\Skeleton\Web\View;
 use Hirtz\Skeleton\Modules\Admin\Widgets\HostAlert;
 use Hirtz\Skeleton\Widgets\Panels\Dashboard;
@@ -21,9 +20,6 @@ use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 $this->title(Yii::t('skeleton', 'DASHBOARD_LABEL'));
 
 echo DashboardHeader::make()
-    ->title(Yii::t('anakin', 'ANAKIN_DASHBOARD_TITLE', [
-        'user' => User::current()->identity->getUsername()
-    ]))
     ->content(AnakinDashboardLogo::make());
 
 echo MigrationAlert::make();

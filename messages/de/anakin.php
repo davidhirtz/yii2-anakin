@@ -7,5 +7,4 @@
 return [
     'ANAKIN_DASHBOARD_CONTACT_TEXT' => 'Brauchen Sie Hilfe?',
     'ANAKIN_DASHBOARD_ENTRIES_BUTTON' => 'Alle Einträge anzeigen',
-    'ANAKIN_DASHBOARD_TITLE' => 'Hallo {user}, schön, Sie wiederzusehen!',
 ];
