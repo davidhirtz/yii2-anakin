@@ -1,4 +1,4 @@
-## Unreleased
+## 3.7.0 (November 11, 2026)
 
 - Added an entries shortcut to the dashboard with the cms installed
 - Changed the dashboard title to the skeleton's greeting
