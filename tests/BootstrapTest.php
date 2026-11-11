@@ -11,10 +11,14 @@ use Hirtz\Skeleton\Assets\AdminAssetBundle;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\AsideMenu;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\NavBar;
 use Hirtz\Skeleton\Test\TestCase;
+use Hirtz\Skeleton\Test\Traits\UserFixtureTrait;
+use Hirtz\Skeleton\Widgets\Panels\Dashboard;
 use Yii;
 
 class BootstrapTest extends TestCase
 {
+    use UserFixtureTrait;
+
     public function testTheAliasesPointIntoTheBundle(): void
     {
         $basePath = dirname(__DIR__);
@@ -31,6 +35,25 @@ class BootstrapTest extends TestCase
     {
         self::assertInstanceOf(AnakinNavBar::class, NavBar::make());
         self::assertInstanceOf(AnakinAsideMenu::class, AsideMenu::make());
+    }
+
+    public function testTheDashboardLinksTheEntriesOnlyWithTheCms(): void
+    {
+        $this->getWebUser()->setIdentity($this->getUserFromFixture('owner'));
+
+        $dashboard = Dashboard::make();
+        $dashboard->render();
+
+        $item = $dashboard->getItem('entries');
+
+        if (!isset(Yii::$app->extensions['davidhirtz/yii2-cms'])) {
+            self::assertNull($item);
+            return;
+        }
+
+        self::assertNotNull($item);
+        self::assertStringContainsString('View all entries', (string)$item);
+        self::assertStringContainsString('href="/admin/cms/entry/index"', (string)$item);
     }
 
     public function testTheMessagesAreTranslated(): void

@@ -9,11 +9,15 @@ use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinAsideMenu;
 use Hirtz\Anakin\Modules\Admin\Widgets\Navs\AnakinNavBar;
 use Hirtz\Skeleton\Base\ConfigBootstrapInterface;
 use Hirtz\Skeleton\Assets\AdminAssetBundle;
+use Hirtz\Skeleton\Helpers\EventHelper;
 use Hirtz\Skeleton\Models\User;
 use Hirtz\Skeleton\Modules\Admin\Module;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\AsideMenu;
 use Hirtz\Skeleton\Modules\Admin\Widgets\Navs\NavBar;
 use Hirtz\Skeleton\Web\Application;
+use Hirtz\Skeleton\Widgets\Panels\Dashboard;
+use Hirtz\Skeleton\Widgets\Panels\DashboardItem;
+use Hirtz\Skeleton\Widgets\Widget;
 use Override;
 use Yii;
 use yii\base\ActionEvent;
@@ -85,6 +89,18 @@ class Bootstrap implements ConfigBootstrapInterface
         // named by package, the theme requiring nothing of yii2-media; a project's own `avifQuality` wins
         if (isset($app->extensions['davidhirtz/yii2-media'])) {
             $app->extendModule('media', ['avifQuality' => self::MEDIA_AVIF_QUALITY]);
+        }
+
+        // the entry route and permission by name, the theme requiring nothing of yii2-cms
+        if (isset($app->extensions['davidhirtz/yii2-cms'])) {
+            EventHelper::on(Dashboard::class, Widget::EVENT_CONFIGURE, static function (Dashboard $dashboard): void {
+                $dashboard->addItem(entries: DashboardItem::make()
+                    ->icon('list')
+                    ->label(Yii::t('anakin', 'ANAKIN_DASHBOARD_ENTRIES_BUTTON'))
+                    ->order(15)
+                    ->roles(['entry'])
+                    ->url(['/admin/cms/entry/index']));
+            });
         }
 
         Event::on(Module::class, BaseModule::EVENT_BEFORE_ACTION, function (ActionEvent $event): void {
