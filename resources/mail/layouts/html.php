@@ -8,7 +8,7 @@ declare(strict_types=1);
  */
 
 use Hirtz\Anakin\Assets\AnakinMailAssetBundle;
-use yii\helpers\Html;
+use Hirtz\Skeleton\Helpers\Html;
 
 $asset = AnakinMailAssetBundle::register($this);
 $logo = $asset->getLogoUrl();
